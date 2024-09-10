@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jokeThemes:
-  - theme: Les Calvities
-    multiplicator: 4
-  - theme: Les Canards
-    multiplicator: 2
+  - Calvitie
+  - Canard
+  - Test
