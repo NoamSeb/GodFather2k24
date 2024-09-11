@@ -7,17 +7,14 @@ using Random = UnityEngine.Random;
 
 public class RandomManager : MonoBehaviour
 {
-    [SerializeField] private List<JokeThemeSO> _jokeThemes;
+    [SerializeField,Expandable] private List<JokeThemeElement> _jokeThemes;
     private List<JokeThemeSO> _currJokeThemes;
     private List<string> _usedJokes;
+    
 
     private void Awake()
     {
         _currJokeThemes = new List<JokeThemeSO>();
-        foreach (JokeThemeSO jTheme in _jokeThemes)
-        {
-            _currJokeThemes.Add(jTheme);
-        }
         _usedJokes = new List<string>();
     }
 
@@ -34,10 +31,7 @@ public class RandomManager : MonoBehaviour
         _currJokeThemes.Remove(jokeTheme);
         if (_currJokeThemes.Count <= 0)
         {
-            foreach (JokeThemeSO jTheme in _jokeThemes)
-            {
-                _currJokeThemes.Add(jTheme);
-            }
+            
         }
         return jokeTheme;
     }
@@ -57,4 +51,16 @@ public class RandomManager : MonoBehaviour
         _usedJokes.Remove(joke);
         return joke;
     }
+}
+
+[Serializable]
+public struct JokeThemeElement
+{
+    [SerializeField] private JokeThemeSO jokeThemeSo;
+    [SerializeField] private int minAppear;
+    [SerializeField] private int maxAppear;
+
+    public JokeThemeSO JokeThemeSo => jokeThemeSo;
+    public int MaxAppear => maxAppear;
+    public int MinAppear => minAppear;
 }
