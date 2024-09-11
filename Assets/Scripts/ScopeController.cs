@@ -5,11 +5,21 @@ using UnityEngine.InputSystem;
 
 public class ScopeController : MonoBehaviour
 {
-    [SerializeField] private float _speed = 3.0f;
+    [SerializeField] private float _speed = 3.0f; 
+    [SerializeField] private float _Delay = 1;
+    [SerializeField] private float _ReloadDelay = 2;
+    [SerializeField] private float _MagCapacity = 6;
+
     private Vector2 _MoveDirection;
     private bool _CanShoot = true;
     private CharacterController _Character;
-    [SerializeField] private float _Delay = 2;
+    private float _bullet1Remaining;
+   
+    private void Start()
+    {
+        _bullet1Remaining = _MagCapacity;
+        Debug.Log(_bullet1Remaining);
+    }
 
     #region Initialization
     private void OnEnable()
@@ -73,12 +83,16 @@ public class ScopeController : MonoBehaviour
     void OnShoot()
     {
         _CanShoot = false;
+        _bullet1Remaining -= 1;
         StartCoroutine(WaitForShoot());
-        Debug.Log("Shooted !");
+        Debug.Log("Bullet remaining : " + _bullet1Remaining);
     }
     private IEnumerator WaitForShoot()
     {
-        yield return new WaitForSeconds(_Delay);
+        yield return new WaitForSeconds(_bullet1Remaining == 0 ? _ReloadDelay : _Delay);
+        if (_bullet1Remaining == 0) { 
+        _bullet1Remaining = _MagCapacity;
+        }
         _CanShoot = true;   
     }
 }
