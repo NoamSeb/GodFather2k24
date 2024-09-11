@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using TMPro;
 using UnityEngine;
 
 public class ThemeUI : MonoBehaviour
 {
-    [SerializeField] private ThemeManager _themeManager;
+    [SerializeField] private RandomManager _randomManager;
     [SerializeField] private TextMeshProUGUI _themeText;
 
     public void ShowTheme()
     {
-        string theme = _themeManager.GetTheme();
+        JokeThemeSO theme = _randomManager.GetTheme();
         Debug.Log(theme);
-        _themeText.text = theme;
+        _themeText.text = theme.Theme;
     }
 }

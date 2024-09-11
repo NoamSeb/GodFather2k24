@@ -740,17 +740,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821398957}
   m_CullTransparentMesh: 1
---- !u!114 &821822585 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-  m_PrefabInstance: {fileID: 1280297838061026761}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1303ac7d43682074aa24c66ac7d88dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1132532209
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d02f9727b296343bb21127f84db817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _themeManager: {fileID: 821822585}
+  _randomManager: {fileID: 0}
   _themeText: {fileID: 798456150}
 --- !u!114 &1683155921
 MonoBehaviour:
@@ -1047,7 +1036,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 504027192915592444, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
       propertyPath: m_Name
-      value: ThemeManager
+      value: RandomManager
       objectReference: {fileID: 0}
     - target: {fileID: 859861515584986751, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1088,14 +1077,6 @@ PrefabInstance:
     - target: {fileID: 859861515584986751, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _jokeThemes.Array.data[3].theme
-      value: Test2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _jokeThemes.Array.data[3].multiplicator
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
