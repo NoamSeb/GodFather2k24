@@ -33,5 +33,11 @@ public class ThemeBubbleBehaviour : MonoBehaviour
     {
         _rb.velocity = _direction * (_speedDefault * _speedMultiplier);
     }
-    
+
+    public void Capture()
+    {
+        Debug.Log("Thought bubble of theme " + _jokeThemeSo.Theme + " was captured !");
+        Destroy(gameObject);
+    }
+
 }

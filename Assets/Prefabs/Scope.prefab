@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1632574688275581724}
   - component: {fileID: 6629325409344576764}
   - component: {fileID: 6015886860973349910}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Scope
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4117378827775009601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6936116, y: 0.3090668, z: 0}
+  m_LocalPosition: {x: -3.52, y: 0.3090668, z: -0.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -97,8 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f566ffc3e4bd4bb42a51d3fb3d8326eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _thoughtScreen: {fileID: 0}
+  _ignoredLayer:
+    serializedVersion: 2
+    m_Bits: 8
   _speed: 5
   _Delay: 1
   _ReloadDelay: 2
   _MagCapacity: 6
+  _gunRange: 0.5
+  _canCaptureMultiple: 1
   _playerIndex: 0
