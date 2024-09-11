@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Internal;
 
 namespace ScriptableObjects
 {
@@ -7,12 +8,14 @@ namespace ScriptableObjects
     public class JokeThemeSO : ScriptableObject
     {
         [SerializeField] private string _theme;
+        [SerializeField] private float _bubbleSpeedMulti = 1;
         [SerializeField] private int _quality;
         [SerializeField, TextArea] private List<string> _jokeList;
 
         public string Theme => _theme;
         public List<string> JokeList => _jokeList;
         public int Quality => _quality;
+        public float BubbleSpeedMulti => _bubbleSpeedMulti;
 
         public string Joke(List<string> usedJokes)
         {
