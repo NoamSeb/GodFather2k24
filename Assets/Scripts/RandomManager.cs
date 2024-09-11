@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using ScriptableObjects;
 using UnityEngine;
@@ -7,39 +8,36 @@ using Random = UnityEngine.Random;
 
 public class RandomManager : MonoBehaviour
 {
-    [SerializeField] private List<JokeThemeSO> _jokeThemes;
-    private List<JokeThemeSO> _currJokeThemes;
+    [SerializeField] private List<JokeThemeElement> _jokeThemeElements;
     private List<string> _usedJokes;
+    
 
     private void Awake()
     {
-        _currJokeThemes = new List<JokeThemeSO>();
-        foreach (JokeThemeSO jTheme in _jokeThemes)
-        {
-            _currJokeThemes.Add(jTheme);
-        }
         _usedJokes = new List<string>();
     }
-
-    [Button]
-    private void GetThemeTest()
-    {
-        JokeThemeSO testTheme = GetTheme();
-        Debug.Log("theme: " + testTheme.Theme);
-    }
     
-    public JokeThemeSO GetTheme()
+    public List<JokeThemeSO> GetThemeList()
     {
-        JokeThemeSO jokeTheme = _currJokeThemes[Random.Range(0, _currJokeThemes.Count)];
-        _currJokeThemes.Remove(jokeTheme);
-        if (_currJokeThemes.Count <= 0)
+        List<JokeThemeSO> jokeThemeList = new List<JokeThemeSO>();
+        foreach (JokeThemeElement jokeThemeEl in _jokeThemeElements)
         {
-            foreach (JokeThemeSO jTheme in _jokeThemes)
+            for (int i = 0; i < Random.Range(jokeThemeEl.MinAppear,jokeThemeEl.MaxAppear); i++)
             {
-                _currJokeThemes.Add(jTheme);
+                jokeThemeList.Add(jokeThemeEl.JokeThemeSo);
             }
         }
-        return jokeTheme;
+
+        List<JokeThemeSO> temp = new List<JokeThemeSO>(0);
+        int nb = jokeThemeList.Count;
+        for (int i = 0; i < nb; i++)
+        {
+            int index = Random.Range(0, jokeThemeList.Count);
+            temp.Add(jokeThemeList[index]);
+            jokeThemeList.RemoveAt(index);
+            
+        }
+        return temp;
     }
 
     public string GetJokeFromTheme(JokeThemeSO jokeThemeSo)
@@ -57,4 +55,16 @@ public class RandomManager : MonoBehaviour
         _usedJokes.Remove(joke);
         return joke;
     }
+}
+
+[Serializable]
+public struct JokeThemeElement
+{
+    [SerializeField] private JokeThemeSO jokeThemeSo;
+    [SerializeField] private int minAppear;
+    [SerializeField] private int maxAppear;
+
+    public JokeThemeSO JokeThemeSo => jokeThemeSo;
+    public int MaxAppear => maxAppear;
+    public int MinAppear => minAppear;
 }
