@@ -448,7 +448,73 @@ ScriptedImporter:
     isImported: 1
     isVisible: 1
   sharedRigPSDLayers: []
-  pSDLayerImportSetting: []
+  pSDLayerImportSetting:
+  - spriteId: 0b2e997a8552c7c4a8056b8fa9326af3
+    name: Plan de travail 1
+    layerId: 3
+    flatten: 0
+    isGroup: 1
+    importLayer: 1
+  - spriteId: 161f4838abe7e504cbf903859573534d
+    name: final
+    layerId: 178
+    flatten: 0
+    isGroup: 1
+    importLayer: 1
+  - spriteId: 3456e1ea13190c84c9dfe2dbb7224de0
+    name: Timer
+    layerId: 195
+    flatten: 0
+    isGroup: 1
+    importLayer: 1
+  - spriteId: b130001f87c4efe42b37ceb175463c35
+    name: Aiguille
+    layerId: 192
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: ec2e722756241344a9ee30040fc00087
+    name: Timer rouge
+    layerId: 194
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 5dfb8d76fe6fc0d4ab84554aa3e673cd
+    name: Timer
+    layerId: 156
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: a6c157e4e4da5b54fb1da953a98a7608
+    name: Sol
+    layerId: 165
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 751b5bd81f2401642922d0d964019404
+    name: 2e Plan
+    layerId: 169
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 0f2a5828bbba65d4eabc1b0da0871317
+    name: 3e Plan
+    layerId: 173
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: e65b88d383008444790776016d993d09
+    name: 4e Plan
+    layerId: 175
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: afd548eda4bfaa547aa452cf3e445ba1
+    name: Ciel
+    layerId: 177
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
   importFileNodeState: 1
   platformSettingsDirtyTick: 638616648039197261
   spriteSizeExpandChanged: 0
