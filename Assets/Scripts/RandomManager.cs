@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using ScriptableObjects;
 using UnityEngine;
@@ -7,33 +8,36 @@ using Random = UnityEngine.Random;
 
 public class RandomManager : MonoBehaviour
 {
-    [SerializeField,Expandable] private List<JokeThemeElement> _jokeThemes;
-    private List<JokeThemeSO> _currJokeThemes;
+    [SerializeField] private List<JokeThemeElement> _jokeThemeElements;
     private List<string> _usedJokes;
     
 
     private void Awake()
     {
-        _currJokeThemes = new List<JokeThemeSO>();
         _usedJokes = new List<string>();
     }
-
-    [Button]
-    private void GetThemeTest()
-    {
-        JokeThemeSO testTheme = GetTheme();
-        Debug.Log("theme: " + testTheme.Theme);
-    }
     
-    public JokeThemeSO GetTheme()
+    public List<JokeThemeSO> GetThemeList()
     {
-        JokeThemeSO jokeTheme = _currJokeThemes[Random.Range(0, _currJokeThemes.Count)];
-        _currJokeThemes.Remove(jokeTheme);
-        if (_currJokeThemes.Count <= 0)
+        List<JokeThemeSO> jokeThemeList = new List<JokeThemeSO>();
+        foreach (JokeThemeElement jokeThemeEl in _jokeThemeElements)
         {
+            for (int i = 0; i < Random.Range(jokeThemeEl.MinAppear,jokeThemeEl.MaxAppear); i++)
+            {
+                jokeThemeList.Add(jokeThemeEl.JokeThemeSo);
+            }
+        }
+
+        List<JokeThemeSO> temp = new List<JokeThemeSO>(0);
+        int nb = jokeThemeList.Count;
+        for (int i = 0; i < nb; i++)
+        {
+            int index = Random.Range(0, jokeThemeList.Count);
+            temp.Add(jokeThemeList[index]);
+            jokeThemeList.RemoveAt(index);
             
         }
-        return jokeTheme;
+        return temp;
     }
 
     public string GetJokeFromTheme(JokeThemeSO jokeThemeSo)

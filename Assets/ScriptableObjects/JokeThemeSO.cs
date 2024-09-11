@@ -10,8 +10,10 @@ namespace ScriptableObjects
         [SerializeField] private string _theme;
         [SerializeField] private float _bubbleSpeedMulti = 1;
         [SerializeField] private int _quality;
+        [SerializeField] private Sprite _themeSprite;
         [SerializeField, TextArea] private List<string> _jokeList;
 
+        public Sprite ThemeSprite => _themeSprite;
         public string Theme => _theme;
         public List<string> JokeList => _jokeList;
         public int Quality => _quality;
