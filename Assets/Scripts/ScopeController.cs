@@ -14,6 +14,9 @@ public class ScopeController : MonoBehaviour
     private bool _CanShoot = true;
     private CharacterController _Character;
     private float _bullet1Remaining;
+
+    [SerializeField] private int _playerIndex;
+    public int GetPlayerIndex() => _playerIndex;
    
     private void Start()
     {

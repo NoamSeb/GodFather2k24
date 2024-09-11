@@ -61,7 +61,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Up"",
                     ""id"": ""9d058f78-68f8-44fc-8f0b-3273611fc343"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""path"": ""<DualShockGamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -72,7 +72,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Down"",
                     ""id"": ""c8b1fc56-4ca1-489d-955e-ca61a686edd2"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""path"": ""<DualShockGamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -83,7 +83,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Left"",
                     ""id"": ""440e98d1-1402-4453-b6a3-613ce0850c57"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""path"": ""<DualShockGamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -94,7 +94,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Right"",
                     ""id"": ""ba538ee8-eb89-4041-b2bb-ce0af5600799"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""path"": ""<DualShockGamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -105,7 +105,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b472af4a-f76a-47e3-a45c-24d434ddbe96"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<DualShockGamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
