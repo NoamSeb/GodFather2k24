@@ -2751,8 +2751,8 @@ MonoBehaviour:
   _phase2Canvas: {fileID: 1038651959}
   _themeUI: {fileID: 1922879677}
   _emptySentences:
-  - Pas d'accessoire !
-  - Pas d'intonation !
+  - Pas d'Accessoire !
+  - Pas d'Intonation !
   _phase1Timer: 10
 --- !u!4 &1877706012
 Transform:
@@ -2869,34 +2869,6 @@ PrefabInstance:
     - target: {fileID: 859861515584986751, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _accessoryList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _intonationList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _accessoryList.Array.data[0]
-      value: test
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _accessoryList.Array.data[1]
-      value: test2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _intonationList.Array.data[0]
-      value: testOui
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _intonationList.Array.data[1]
-      value: test2Oui
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991378143755870417, guid: eabeb97168a2966478d271d2018e32ac, type: 3}
-      propertyPath: _bonusElements.Array.data[1].bonusType
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

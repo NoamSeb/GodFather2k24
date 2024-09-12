@@ -20,7 +20,13 @@ public class RandomManager : MonoBehaviour
     {
         _usedJokes = new List<string>();
     }
-    
+
+    public string GetRandomIntonation()
+    {
+        string intonation = _intonationList[Random.Range(0, _intonationList.Count)];
+        _intonationList.Remove(intonation);
+        return intonation;
+    }
     public List<JokeThemeSO> GetThemeList()
     {
         List<JokeThemeSO> jokeThemeList = new List<JokeThemeSO>();

@@ -97,8 +97,8 @@ public class GameManager : MonoBehaviour
         }
         JokeThemeSO jokeThemeSo = _capturedJokes[0][_themeIndex[0]];
         _randomManager.GetJokeFromTheme(jokeThemeSo);
-        Debug.Log("JokeTheme : " + jokeThemeSo.Theme + ", _currPlayerIndexJoke : " + _currPlayerIndexJoke);
-        _themeUI.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo), _currPlayerIndexJoke);
+        (string accessory, string intonation) = GetBonus();
+        _themeUI.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo), _currPlayerIndexJoke, accessory, intonation);
     }
 
     public void PassToNextJoke(int playerIndex)
