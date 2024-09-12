@@ -2753,7 +2753,7 @@ MonoBehaviour:
   _emptySentences:
   - Pas d'Accessoire !
   - Pas d'Intonation !
-  _phase1Timer: 10
+  _phase1Timer: 20
 --- !u!4 &1877706012
 Transform:
   m_ObjectHideFlags: 0
