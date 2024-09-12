@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using ScriptableObjects;
@@ -30,6 +28,7 @@ public class GameManager : MonoBehaviour
         _players = new ScopeController[2];
         _themeIndex = new [] { 0, 0 };
         _capturedJokes = new List<JokeThemeSO>[2];
+        _currPlayerIndexJoke = -1;
     }
 
     private void Start()
@@ -53,7 +52,7 @@ public class GameManager : MonoBehaviour
         _phase2Canvas.SetActive(true);
         _capturedJokes[0] = _players[0].GetCapturedJokes();
         _capturedJokes[1] = _players[1].GetCapturedJokes();
-        _currPlayerIndexJoke = 0;
+        _currPlayerIndexJoke = _players[0].GetPlayerScore() < _players[1].GetPlayerScore() ? 1 : _players[0].GetPlayerScore() == _players[1].GetPlayerScore() ? _currPlayerIndexJoke : 0;
         _bonusTypesP1 = new List<BonusType>[_capturedJokes[0].Count];
         _bonusTypesP2 = new List<BonusType>[_capturedJokes[1].Count];
         
@@ -167,5 +166,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameOver");
         //EndPhase;
+    }
+
+    public void FirstCloudCaptured(int playerIndex)
+    {
+        if (_currPlayerIndexJoke == -1) _currPlayerIndexJoke = playerIndex;
     }
 }
