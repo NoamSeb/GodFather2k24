@@ -59,10 +59,22 @@ MonoBehaviour:
     maxAppear: 4
   _bonusElements:
   - bonusType: 0
+    minAppear: 1
+    maxAppear: 2
+  - bonusType: 1
     minAppear: 2
     maxAppear: 3
-  - bonusType: 0
-    minAppear: 2
-    maxAppear: 3
-  _accessoryList: []
-  _intonationList: []
+  _accessoryList:
+  - 'Lunette bite '
+  - Barbe
+  - Cheveux blanc
+  - Cheveux Brun
+  _intonationList:
+  - "accent du sud\_"
+  - accent quebecois
+  - voix de mickey
+  - voix de stich
+  - "Dark Vador\_"
+  - Accent du nord
+  - "P\xE8re Fouras"
+  - Voix enfant
