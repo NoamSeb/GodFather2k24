@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _theme: blague de daron
   _bubbleSpeedMulti: 1
-  _quality: 2
+  _sizeMultiplier: 1.5
   _themeSprite: {fileID: 0}
   _jokeList:
   - "Pourquoi l'homme demande t-il la main d'une femme ?\n\_\nParce qu'il en a marre

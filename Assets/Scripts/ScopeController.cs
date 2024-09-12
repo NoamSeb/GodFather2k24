@@ -26,7 +26,9 @@ public class ScopeController : MonoBehaviour
     private float _bullet1Remaining;
 
     private List<JokeThemeSO> _capturedThemes;
+    private List<BonusType> _capturedBonus;
     public List<JokeThemeSO> GetCapturedJokes() => _capturedThemes;
+    public List<BonusType> GetCapturedBonus() => _capturedBonus;
     
     [SerializeField] private int _playerIndex;
     public int GetPlayerIndex() => _playerIndex;
@@ -40,6 +42,7 @@ public class ScopeController : MonoBehaviour
         _bullet1Remaining = _MagCapacity;
         Debug.Log(_bullet1Remaining);
         _capturedThemes = new List<JokeThemeSO>();
+        _capturedBonus = new List<BonusType>();
         audioSource = GetComponent<AudioSource>();
         _gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _gameManager.SetPlayer(this,_playerIndex);
@@ -136,6 +139,13 @@ public class ScopeController : MonoBehaviour
                 themeBubble.Capture();
                 if (!_canCaptureMultiple) break;
             }
+            else if (col.gameObject.CompareTag("BonusBubble"))
+            {
+                BonusBubbleBehaviour bonusBubble = col.GetComponent<BonusBubbleBehaviour>();
+                _capturedBonus.Add(bonusBubble.GetBonusType());
+                bonusBubble.Capture();
+                if (!_canCaptureMultiple) break;
+            }
         }
         
         audioSource.PlayOneShot(_shootSound, _EffectVolume);
@@ -166,6 +176,9 @@ public class ScopeController : MonoBehaviour
 
     public void ReadOKInput(InputAction.CallbackContext context)
     {
-        _gameManager.PassToNextJoke(_playerIndex);
+        if (context.performed)
+        {
+            _gameManager.PassToNextJoke(_playerIndex);
+        }
     }
 }

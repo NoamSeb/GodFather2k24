@@ -55,11 +55,14 @@ MonoBehaviour:
     minAppear: 2
     maxAppear: 3
   - jokeThemeSo: {fileID: 11400000, guid: 67ccf94a89fc56544a6daf7528787a27, type: 2}
-    minAppear: 5
-    maxAppear: 7
-  - jokeThemeSo: {fileID: 11400000, guid: bf1c0d4c81ff9fd43bfa190ad93c52f3, type: 2}
     minAppear: 2
     maxAppear: 3
-  - jokeThemeSo: {fileID: 11400000, guid: e7ed872d3b56fec4da4df5cbbb774f1d, type: 2}
-    minAppear: 1
-    maxAppear: 2
+  _bonusElements:
+  - bonusType: 0
+    minAppear: 2
+    maxAppear: 3
+  - bonusType: 0
+    minAppear: 2
+    maxAppear: 3
+  _accessoryList: []
+  _intonationList: []

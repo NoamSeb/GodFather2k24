@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _theme: Humour Noir
   _bubbleSpeedMulti: 1
-  _quality: 1
+  _sizeMultiplier: 1
   _themeSprite: {fileID: -5104592536962530534, guid: 9f2b191c1f7090445af3c6502ff0a365, type: 3}
   _jokeList:
   - "Quelle est l'animal qui ne sait pas nager ?\nLe tigre \xE9gory (ptit gr\xE9gory)"

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _theme: Blague IIM
   _bubbleSpeedMulti: 1
-  _quality: 1
+  _sizeMultiplier: 1
   _themeSprite: {fileID: 0}
   _jokeList:
   - 'Qu''est ce qui est plus lisse qu''une patinoire.

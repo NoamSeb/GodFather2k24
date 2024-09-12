@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private int _gamePhase;
     private ScopeController[] _players;
     private List<JokeThemeSO>[] _capturedJokes;
+    private List<BonusType>[] bonusTypes;
 
     private int[] _themeIndex;
     private int _currPlayerIndexJoke;
@@ -25,7 +26,12 @@ public class GameManager : MonoBehaviour
         _themeIndex = new [] { 0, 0 };
         _capturedJokes = new List<JokeThemeSO>[2]; 
     }
-    
+
+    private void Start()
+    {
+        StartGame();
+    }
+
     [Button]
     public void StartGame()
     {
@@ -41,6 +47,11 @@ public class GameManager : MonoBehaviour
         _capturedJokes[0] = _players[0].GetCapturedJokes();
         _capturedJokes[1] = _players[1].GetCapturedJokes();
         _currPlayerIndexJoke = 0;
+        if (_capturedJokes[0].Count == 0 & _capturedJokes[1].Count == 0) //No Jokes were took
+        {
+            GameEnd();
+            return;
+        }
         JokeThemeSO jokeThemeSo = _capturedJokes[0][_themeIndex[0]];
         _randomManager.GetJokeFromTheme(jokeThemeSo);
         //tonObj.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo);, _currPlayerIndexJoke)
@@ -48,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void PassToNextJoke(int playerIndex)
     {
+        if (_gamePhase != 2) return;
         //If Player that wants to pass to next Joke has current joke
         if (_currPlayerIndexJoke == playerIndex)
         {

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _theme: Bonus accessoires
   _bubbleSpeedMulti: 1
-  _quality: 0
+  _sizeMultiplier: 0.5
   _themeSprite: {fileID: 0}
   _jokeList:
   - Lunette bite
