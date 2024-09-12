@@ -158,7 +158,19 @@ MonoBehaviour:
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538870823}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayerJoined
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_PlayerLeftEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1277,6 +1289,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33bbbb032a4fce44ab2563c833fb8edb, type: 3}
+--- !u!114 &1538870823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4229693397514066071, guid: 28914e422df003843ac39c0eea016136, type: 3}
+  m_PrefabInstance: {fileID: 5140237592397337669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a60517bb3e2b3c428abad73667f2bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1684174854 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1549562983808783248, guid: 792c664640fab6f43b1afc8333f53b41, type: 3}
@@ -1780,6 +1803,10 @@ PrefabInstance:
       propertyPath: _randomManager
       value: 
       objectReference: {fileID: 1280297838061026762}
+    - target: {fileID: 4229693397514066071, guid: 28914e422df003843ac39c0eea016136, type: 3}
+      propertyPath: _mainMusicAudioSource
+      value: 
+      objectReference: {fileID: 871115749}
     - target: {fileID: 8712495399946789571, guid: 28914e422df003843ac39c0eea016136, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2637594

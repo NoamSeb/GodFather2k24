@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField, Foldout("References")] private RandomManager _randomManager;
     [SerializeField, Foldout("References")] private GameObject _phase2Canvas;
     [SerializeField, Foldout("References")] private ThemeUI _themeUI;
+    [SerializeField, Foldout("References")] private AudioSource _mainMusicAudioSource;
+    [SerializeField, Foldout("References")] private AudioClip _duelMusic;
     [SerializeField] private string[] _emptySentences;
     [SerializeField] private float _phase1Timer = 30f;
     
@@ -21,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     private int[] _themeIndex;
     private int _currPlayerIndexJoke;
+    
+    private int _nbPlayer;
     public int GamePhase => _gamePhase;
 
     private void Awake()
@@ -29,17 +33,19 @@ public class GameManager : MonoBehaviour
         _themeIndex = new [] { 0, 0 };
         _capturedJokes = new List<JokeThemeSO>[2];
         _currPlayerIndexJoke = -1;
+        _nbPlayer = 0;
+        _phase2Canvas.SetActive(false);
     }
 
-    private void Start()
+    public void PlayerJoined()
     {
-        StartGame();
+        _nbPlayer++;
+        if (_nbPlayer>=2) StartGame();
     }
 
     [Button]
     public void StartGame()
     {
-        _phase2Canvas.SetActive(false);
         _gamePhase = 1;
         _bubbleManager.StartBubbles(_phase1Timer, this);
     }
@@ -49,6 +55,8 @@ public class GameManager : MonoBehaviour
     public void StartPhase2()
     {
         _gamePhase = 2;
+        _mainMusicAudioSource.clip = _duelMusic;
+        _mainMusicAudioSource.Play();
         _phase2Canvas.SetActive(true);
         _capturedJokes[0] = _players[0].GetCapturedJokes();
         _capturedJokes[1] = _players[1].GetCapturedJokes();

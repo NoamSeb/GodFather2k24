@@ -14,7 +14,7 @@ public class ScopeController : MonoBehaviour
     [SerializeField] private float _Delay = 1;
     [SerializeField] private float _ReloadDelay = 2;
     [SerializeField, Foldout("Sound")] private AudioClip _reloadSound = null;
-    [SerializeField, Foldout("Sound")] private AudioClip _shootSound = null;
+    [SerializeField, Foldout("Sound")] private AudioClip[] _shootSound = null;
     [SerializeField] private float _MagCapacity = 6;
     
     [SerializeField] private float _gunRange = 0.5f;
@@ -134,7 +134,7 @@ public class ScopeController : MonoBehaviour
     {
         _CanShoot = false;
         _bullet1Remaining -= 1;
-        audioSource.PlayOneShot(_shootSound, _EffectVolume);
+        audioSource.PlayOneShot(_shootSound[Random.Range(0,_shootSound.Length)], _EffectVolume);
         _playerCharacter.SetTrigger("Shoot");
         
         //Check Collision with Theme Bubbles
@@ -170,11 +170,11 @@ public class ScopeController : MonoBehaviour
     }
     private IEnumerator WaitForShoot()
     {
-        yield return new WaitForSeconds(_bullet1Remaining == 0 ? _ReloadDelay : _Delay);
         if (_bullet1Remaining == 0) {
             audioSource.PlayOneShot(_reloadSound, _EffectVolume);
-            _bullet1Remaining = _MagCapacity;
         }
+        yield return new WaitForSeconds(_bullet1Remaining == 0 ? _ReloadDelay : _Delay);
+        if (_bullet1Remaining == 0) _bullet1Remaining = _MagCapacity;
         _CanShoot = true;
     }
 
