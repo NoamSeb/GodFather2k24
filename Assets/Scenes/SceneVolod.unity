@@ -2750,6 +2750,9 @@ MonoBehaviour:
   _randomManager: {fileID: 1280297838061026762}
   _phase2Canvas: {fileID: 1038651959}
   _themeUI: {fileID: 1922879677}
+  _emptySentences:
+  - Pas d'Accessoire !
+  - Pas d'Intonation !
   _phase1Timer: 10
 --- !u!4 &1877706012
 Transform:
