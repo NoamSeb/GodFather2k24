@@ -20,6 +20,9 @@ public class ScopeController : MonoBehaviour
     [SerializeField] private bool _canCaptureMultiple = true;
     [SerializeField] private float _EffectVolume = 1.0f;
 
+    [SerializeField, Foldout("Art")] private Animator _playerCharacter;
+    [SerializeField, Foldout("Art")] private Transform _animTarget;
+
     private Vector2 _MoveDirection;
     private bool _CanShoot = true;
     private CharacterController _Character;
