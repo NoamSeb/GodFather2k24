@@ -51,6 +51,8 @@ public class ScopeController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         _gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _gameManager.SetPlayer(this,_playerIndex);
+        _animTarget.parent = transform;
+        _animTarget.localPosition = Vector3.zero;
     }
 
     #region Initialization
@@ -132,6 +134,8 @@ public class ScopeController : MonoBehaviour
     {
         _CanShoot = false;
         _bullet1Remaining -= 1;
+        audioSource.PlayOneShot(_shootSound, _EffectVolume);
+        _playerCharacter.SetTrigger("Shoot");
         
         //Check Collision with Theme Bubbles
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, _gunRange);
@@ -155,7 +159,6 @@ public class ScopeController : MonoBehaviour
 
         if (GetPlayerScore() == 1) _gameManager.FirstCloudCaptured(_playerIndex);
         
-        audioSource.PlayOneShot(_shootSound, _EffectVolume);
         StartCoroutine(WaitForShoot());
         Debug.Log("Bullet remaining : " + _bullet1Remaining);
 
