@@ -106,11 +106,16 @@ MonoBehaviour:
   _Delay: 0.75
   _ReloadDelay: 3
   _reloadSound: {fileID: 8300000, guid: 65cce753e5c041649960198d903b718e, type: 3}
-  _shootSound: {fileID: 8300000, guid: a7113b678f383344796e800ebdce4ee7, type: 3}
+  _shootSound:
+  - {fileID: 8300000, guid: 9458dea20ad6e114bb66432d47f7f1ff, type: 3}
+  - {fileID: 8300000, guid: df921eb683fd3c74ba0104e6960819b8, type: 3}
+  - {fileID: 8300000, guid: 3510b00ae0114584cb31010fac655d0b, type: 3}
   _MagCapacity: 6
   _gunRange: 0.5
   _canCaptureMultiple: 1
   _EffectVolume: 1
+  _playerCharacter: {fileID: 0}
+  _animTarget: {fileID: 0}
   _playerIndex: 0
 --- !u!82 &3301239570125114328
 AudioSource:

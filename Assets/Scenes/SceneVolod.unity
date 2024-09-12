@@ -1780,6 +1780,10 @@ PrefabInstance:
       propertyPath: _randomManager
       value: 
       objectReference: {fileID: 1280297838061026762}
+    - target: {fileID: 4229693397514066071, guid: 28914e422df003843ac39c0eea016136, type: 3}
+      propertyPath: _mainMusicAudioSource
+      value: 
+      objectReference: {fileID: 871115749}
     - target: {fileID: 8712495399946789571, guid: 28914e422df003843ac39c0eea016136, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2637594

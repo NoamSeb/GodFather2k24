@@ -48,6 +48,8 @@ MonoBehaviour:
   _randomManager: {fileID: 0}
   _phase2Canvas: {fileID: 0}
   _themeUI: {fileID: 0}
+  _mainMusicAudioSource: {fileID: 0}
+  _duelMusic: {fileID: 8300000, guid: a075eaf4efc43cd48887da9779235df0, type: 3}
   _emptySentences:
   - Pas d'Accessoire !
   - Pas d'Intonation !
