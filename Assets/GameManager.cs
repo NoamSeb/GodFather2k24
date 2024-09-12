@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField, Foldout("References")] private BubbleManager _bubbleManager;
     [SerializeField, Foldout("References")] private RandomManager _randomManager;
+    [SerializeField, Foldout("References")] private GameObject _phase2Canvas;
+    [SerializeField, Foldout("References")] private ThemeUI _themeUI;
     [SerializeField] private float _phase1Timer = 30f;
     
     private int _gamePhase;
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
     [Button]
     public void StartGame()
     {
+        _phase2Canvas.SetActive(false);
         _gamePhase = 1;
         _bubbleManager.StartBubbles(_phase1Timer, this);
     }
@@ -44,6 +47,7 @@ public class GameManager : MonoBehaviour
     public void StartPhase2()
     {
         _gamePhase = 2;
+        _phase2Canvas.SetActive(true);
         _capturedJokes[0] = _players[0].GetCapturedJokes();
         _capturedJokes[1] = _players[1].GetCapturedJokes();
         _currPlayerIndexJoke = 0;
@@ -54,7 +58,8 @@ public class GameManager : MonoBehaviour
         }
         JokeThemeSO jokeThemeSo = _capturedJokes[0][_themeIndex[0]];
         _randomManager.GetJokeFromTheme(jokeThemeSo);
-        //tonObj.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo);, _currPlayerIndexJoke)
+        Debug.Log("JokeTheme : " + jokeThemeSo.Theme + ", _currPlayerIndexJoke : " + _currPlayerIndexJoke);
+        _themeUI.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo), _currPlayerIndexJoke);
     }
 
     public void PassToNextJoke(int playerIndex)
@@ -73,6 +78,7 @@ public class GameManager : MonoBehaviour
                 _currPlayerIndexJoke = _currPlayerIndexJoke == 0 ? 1 : 0;
                 if (_capturedJokes[_currPlayerIndexJoke].Count <= _themeIndex[_currPlayerIndexJoke])
                 {
+                    Debug.Log("All Jokes Used");
                     GameEnd();
                     return;
                 }
@@ -80,12 +86,13 @@ public class GameManager : MonoBehaviour
             
             JokeThemeSO jokeThemeSo = _capturedJokes[_currPlayerIndexJoke][_themeIndex[_currPlayerIndexJoke]];
             _randomManager.GetJokeFromTheme(jokeThemeSo);
-            //tonObj.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo);, _currPlayerIndexJoke)
+            _themeUI.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo), _currPlayerIndexJoke);
         }
     }
 
     private void GameEnd()
     {
+        Debug.Log("GameOver");
         //EndPhase;
     }
 }
