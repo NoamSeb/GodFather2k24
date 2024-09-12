@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects;
@@ -11,10 +12,13 @@ public class ScopeController : MonoBehaviour
     [SerializeField] private float _speed = 3.0f; 
     [SerializeField] private float _Delay = 1;
     [SerializeField] private float _ReloadDelay = 2;
+    [SerializeField, Foldout("Sound")] private AudioClip _reloadSound = null;
+    [SerializeField, Foldout("Sound")] private AudioClip _shootSound = null;
     [SerializeField] private float _MagCapacity = 6;
     
     [SerializeField] private float _gunRange = 0.5f;
     [SerializeField] private bool _canCaptureMultiple = true;
+    [SerializeField] private float _EffectVolume = 1.0f;
 
     private Vector2 _MoveDirection;
     private bool _CanShoot = true;
@@ -27,11 +31,15 @@ public class ScopeController : MonoBehaviour
     [SerializeField] private int _playerIndex;
     public int GetPlayerIndex() => _playerIndex;
    
+
+    private AudioSource audioSource;
+
     private void Start()
     {
         _bullet1Remaining = _MagCapacity;
         Debug.Log(_bullet1Remaining);
         _capturedThemes = new List<JokeThemeSO>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     #region Initialization
@@ -127,6 +135,7 @@ public class ScopeController : MonoBehaviour
             }
         }
         
+        audioSource.PlayOneShot(_shootSound, _EffectVolume);
         StartCoroutine(WaitForShoot());
         Debug.Log("Bullet remaining : " + _bullet1Remaining);
 
@@ -139,7 +148,8 @@ public class ScopeController : MonoBehaviour
     private IEnumerator WaitForShoot()
     {
         yield return new WaitForSeconds(_bullet1Remaining == 0 ? _ReloadDelay : _Delay);
-        if (_bullet1Remaining == 0) { 
+        if (_bullet1Remaining == 0) {
+            audioSource.PlayOneShot(_reloadSound, _EffectVolume);
             _bullet1Remaining = _MagCapacity;
         }
         _CanShoot = true;
