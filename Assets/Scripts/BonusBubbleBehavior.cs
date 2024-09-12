@@ -13,6 +13,8 @@ public class BonusBubbleBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer _iconSprite;
     [SerializeField] private GameObject[] _resizedParticles;
     [SerializeField] private TrailRenderer _cloudTrail;
+    [SerializeField] private GameObject _explosion;
+    [SerializeField] private GameObject[] _toDisableWhenExplode;
     private Vector2 _direction;
     private Rigidbody2D _rb;
     private BonusType _bonusType;
@@ -48,7 +50,13 @@ public class BonusBubbleBehaviour : MonoBehaviour
     public void Capture()
     {
         Debug.Log("Thought bubble of bonus " + _bonusType + " was captured !");
-        Destroy(gameObject);
+        foreach (GameObject toDisable in _toDisableWhenExplode)
+        {
+            toDisable.SetActive(false);
+        }
+
+        _explosion.SetActive(true);
+        Destroy(gameObject,1);
     }
 
 }

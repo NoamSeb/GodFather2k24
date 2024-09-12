@@ -43,9 +43,9 @@ TagManager:
   - name: Background
     uniqueID: 2241133015
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Clouds
     uniqueID: 3177123017
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

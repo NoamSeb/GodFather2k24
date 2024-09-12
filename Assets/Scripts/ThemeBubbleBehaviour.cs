@@ -15,6 +15,8 @@ public class ThemeBubbleBehaviour : MonoBehaviour
     private float _speedMultiplier;
     [SerializeField] private GameObject[] _resizedParticles;
     [SerializeField] private TrailRenderer _cloudTrail;
+    [SerializeField] private GameObject _explosion;
+    [SerializeField] private GameObject[] _toDisableWhenExplode;
 
 
     public JokeThemeSO GetThemeSo() => _jokeThemeSo;
@@ -47,7 +49,12 @@ public class ThemeBubbleBehaviour : MonoBehaviour
     public void Capture()
     {
         Debug.Log("Thought bubble of theme " + _jokeThemeSo.Theme + " was captured !");
-        Destroy(gameObject);
+        foreach (GameObject toDisable in _toDisableWhenExplode)
+        {
+            toDisable.SetActive(false);
+        }
+        _explosion.SetActive(true);
+        Destroy(gameObject,1);
     }
 
 }
