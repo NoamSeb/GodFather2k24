@@ -12,11 +12,18 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] private GameObject _thoughtScreen;
     [SerializeField] private Vector2 _dirDiffPos;
 
+    private GameManager _gameManager;
 
     [Button]
     private void Test()
     {
         StartCoroutine(LaunchGame(30));
+    }
+
+    public void StartBubbles(float timer, GameManager gameManager)
+    {
+        _gameManager = gameManager;
+        StartCoroutine(LaunchGame(timer));
     }
     private IEnumerator LaunchGame(float timer)
     {
@@ -27,6 +34,7 @@ public class BubbleManager : MonoBehaviour
             CreateBubble(jokeThemeSo);
             yield return new WaitForSeconds(cooldown);
         }
+        _gameManager.StartPhase2();
     }
     
     private void CreateBubble(JokeThemeSO jokeThemeSo)
