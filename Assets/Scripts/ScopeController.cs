@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -35,6 +36,7 @@ public class ScopeController : MonoBehaviour
     
     [SerializeField] private int _playerIndex;
     public int GetPlayerIndex() => _playerIndex;
+    public int GetPlayerScore() => _capturedBonus.Count + _capturedThemes.Count;
    
 
     private AudioSource audioSource;
@@ -150,6 +152,8 @@ public class ScopeController : MonoBehaviour
                 if (!_canCaptureMultiple) break;
             }
         }
+
+        if (GetPlayerScore() == 1) _gameManager.FirstCloudCaptured(_playerIndex);
         
         audioSource.PlayOneShot(_shootSound, _EffectVolume);
         StartCoroutine(WaitForShoot());
