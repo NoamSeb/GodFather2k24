@@ -14,8 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _theme: Humour Noir
   _bubbleSpeedMulti: 1
-  _quality: 2
+  _sizeMultiplier: 1
   _themeSprite: {fileID: -5104592536962530534, guid: 9f2b191c1f7090445af3c6502ff0a365, type: 3}
   _jokeList:
   - "Quelle est l'animal qui ne sait pas nager ?\nLe tigre \xE9gory (ptit gr\xE9gory)"
-  - Une autre blague j'ai pas d'inspi
+  - 'C''est l''histoire d''un mec qui a 5 bites.
+
+    Son slip lui va comme un gant.'
+  - "Quel est le l\xE9gume officiel de l'Allemagne ?\n\nMichael Schumacher."
+  - "C'est l'histoire de l'eunuque d\xE9capit\xE9\nUne histoire sans queue ni t\xEAte."
+  - "Quelle est la diff\xE9rence entre la bi\xE8re et la pisse ?\n\nEnviron un quart
+    d\u2019heure."
+  - "J'ai une blague sur Claude Fran\xE7ois ...\n\u2026 mais je crois que vous \xEAtes
+    au courant"
+  - "Quelle est la diff\xE9rence entre un chalet en Suisse et mon cul ?\nLa vue."
+  - "- maman est que j'ai \xE9t\xE9 adapter ?\n\n- Pas encore, on a post\xE9 l'annonce
+    qu'hier"

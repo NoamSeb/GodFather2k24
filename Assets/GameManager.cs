@@ -26,7 +26,12 @@ public class GameManager : MonoBehaviour
         _themeIndex = new [] { 0, 0 };
         _capturedJokes = new List<JokeThemeSO>[2]; 
     }
-    
+
+    private void Start()
+    {
+        StartGame();
+    }
+
     [Button]
     public void StartGame()
     {
@@ -42,6 +47,11 @@ public class GameManager : MonoBehaviour
         _capturedJokes[0] = _players[0].GetCapturedJokes();
         _capturedJokes[1] = _players[1].GetCapturedJokes();
         _currPlayerIndexJoke = 0;
+        if (_capturedJokes[0].Count == 0 & _capturedJokes[1].Count == 0) //No Jokes were took
+        {
+            GameEnd();
+            return;
+        }
         JokeThemeSO jokeThemeSo = _capturedJokes[0][_themeIndex[0]];
         _randomManager.GetJokeFromTheme(jokeThemeSo);
         //tonObj.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo);, _currPlayerIndexJoke)

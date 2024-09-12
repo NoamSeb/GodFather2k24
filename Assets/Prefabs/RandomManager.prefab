@@ -51,17 +51,18 @@ MonoBehaviour:
   - jokeThemeSo: {fileID: 11400000, guid: 3b03f3bc4b03867458e128234249310a, type: 2}
     minAppear: 2
     maxAppear: 3
+  - jokeThemeSo: {fileID: 11400000, guid: 29f69b1d06dffed4f9be9a101a2b23f0, type: 2}
+    minAppear: 2
+    maxAppear: 3
+  - jokeThemeSo: {fileID: 11400000, guid: 67ccf94a89fc56544a6daf7528787a27, type: 2}
+    minAppear: 2
+    maxAppear: 3
   _bonusElements:
   - bonusType: 0
-    minAppear: 4
-    maxAppear: 5
-  - bonusType: 1
-    minAppear: 6
-    maxAppear: 8
-  _accessoryList:
-  - Peruque Blonde
-  - Chapeau HauteForme
-  - Lunette Bite
-  _intonationList:
-  - Accent Sud
-  - Accent Nord
+    minAppear: 2
+    maxAppear: 3
+  - bonusType: 0
+    minAppear: 2
+    maxAppear: 3
+  _accessoryList: []
+  _intonationList: []
