@@ -23,8 +23,10 @@ public class GameManager : MonoBehaviour
     {
         _players = new ScopeController[2];
         _themeIndex = new [] { 0, 0 };
+        _capturedJokes = new List<JokeThemeSO>[2]; 
     }
-
+    
+    [Button]
     public void StartGame()
     {
         _gamePhase = 1;
