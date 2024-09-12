@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private int _gamePhase;
     private ScopeController[] _players;
     private List<JokeThemeSO>[] _capturedJokes;
+    private List<BonusType>[] bonusTypes;
 
     private int[] _themeIndex;
     private int _currPlayerIndexJoke;
