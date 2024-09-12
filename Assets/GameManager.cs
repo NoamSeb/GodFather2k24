@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, Foldout("References")] private ThemeUI _themeUI;
     [SerializeField, Foldout("References")] private AudioSource _mainMusicAudioSource;
     [SerializeField, Foldout("References")] private AudioClip _duelMusic;
+    [SerializeField, Foldout("References")] private AudioClip _gunShot;
     [SerializeField, Foldout("References")] private GameObject _preparePanel;
     [SerializeField, Foldout("References")] private GameObject _finishedPanel;
     [SerializeField] private string[] _emptySentences;
@@ -135,6 +136,7 @@ public class GameManager : MonoBehaviour
         //If Player that wants to pass to next Joke has current joke
         if (_currPlayerIndexJoke == playerIndex)
         {
+            _mainMusicAudioSource.PlayOneShot(_gunShot);
             _themeIndex[playerIndex]++;
             _currPlayerIndexJoke = _currPlayerIndexJoke == 0 ? 1 : 0;
             

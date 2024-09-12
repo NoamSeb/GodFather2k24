@@ -1,3 +1,4 @@
+using System;
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,12 +11,6 @@ public class BulletManager : MonoBehaviour
     // List to track the state of bullets (active/inactive)
     private List<string> _MagsBullets = new List<string>();
 
-    [Button]
-    private void shootTrigger()
-    {
-        Shoot();
-    }
-
     private void Start()
     {
         Reload();
@@ -23,6 +18,7 @@ public class BulletManager : MonoBehaviour
 
     public void Shoot()
     {
+        Debug.Log("Decreasing in UI");
         if (_MagsBullets.Count > 0)
         {
   
@@ -39,10 +35,6 @@ public class BulletManager : MonoBehaviour
             {
                 Debug.LogError("Bullet not found: " + bulletName);
             }
-        }
-        else
-        {
-            Reload();
         }
     }
     public void Reload()
