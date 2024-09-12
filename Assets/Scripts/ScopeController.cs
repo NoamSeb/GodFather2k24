@@ -8,8 +8,9 @@ using UnityEngine.InputSystem;
 
 public class ScopeController : MonoBehaviour
 {
-    [SerializeField] private Transform _thoughtScreen;
-    [SerializeField] private LayerMask _ignoredLayer;
+    [SerializeField, Foldout("Reference")] private Transform _thoughtScreen;
+    [SerializeField, Foldout("Reference")] private GameUI _gameUI;
+    [SerializeField, Foldout("Reference")] private LayerMask _ignoredLayer;
     [SerializeField] private float _speed = 3.0f; 
     [SerializeField] private float _Delay = 1;
     [SerializeField] private float _ReloadDelay = 2;
@@ -86,6 +87,7 @@ public class ScopeController : MonoBehaviour
 
     public void ReadShootInput (InputAction.CallbackContext context)
     {
+        if (_gameManager.GamePhase != 1) return;
         if (context.performed && _CanShoot)
         {
             OnShoot();
@@ -134,6 +136,7 @@ public class ScopeController : MonoBehaviour
     {
         _CanShoot = false;
         _bullet1Remaining -= 1;
+        _gameUI.Shooting(_playerIndex);
         audioSource.PlayOneShot(_shootSound[Random.Range(0,_shootSound.Length)], _EffectVolume);
         _playerCharacter.SetTrigger("Shoot");
         
@@ -158,6 +161,7 @@ public class ScopeController : MonoBehaviour
         }
 
         if (GetPlayerScore() == 1) _gameManager.FirstCloudCaptured(_playerIndex);
+        _gameUI.UpdateScoreUI(_playerIndex, GetPlayerScore());
         
         StartCoroutine(WaitForShoot());
         Debug.Log("Bullet remaining : " + _bullet1Remaining);
@@ -174,7 +178,11 @@ public class ScopeController : MonoBehaviour
             audioSource.PlayOneShot(_reloadSound, _EffectVolume);
         }
         yield return new WaitForSeconds(_bullet1Remaining == 0 ? _ReloadDelay : _Delay);
-        if (_bullet1Remaining == 0) _bullet1Remaining = _MagCapacity;
+        if (_bullet1Remaining == 0)
+        {
+            _bullet1Remaining = _MagCapacity;
+            _gameUI.Reload(_playerIndex);
+        }
         _CanShoot = true;
     }
 
