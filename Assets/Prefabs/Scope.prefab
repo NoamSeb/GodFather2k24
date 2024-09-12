@@ -102,9 +102,9 @@ MonoBehaviour:
   _ignoredLayer:
     serializedVersion: 2
     m_Bits: 8
-  _speed: 5
-  _Delay: 1
-  _ReloadDelay: 2
+  _speed: 6
+  _Delay: 0.75
+  _ReloadDelay: 3
   _reloadSound: {fileID: 8300000, guid: 65cce753e5c041649960198d903b718e, type: 3}
   _shootSound: {fileID: 8300000, guid: a7113b678f383344796e800ebdce4ee7, type: 3}
   _MagCapacity: 6
