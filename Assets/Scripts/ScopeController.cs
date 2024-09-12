@@ -170,11 +170,11 @@ public class ScopeController : MonoBehaviour
     }
     private IEnumerator WaitForShoot()
     {
-        yield return new WaitForSeconds(_bullet1Remaining == 0 ? _ReloadDelay : _Delay);
         if (_bullet1Remaining == 0) {
             audioSource.PlayOneShot(_reloadSound, _EffectVolume);
-            _bullet1Remaining = _MagCapacity;
         }
+        yield return new WaitForSeconds(_bullet1Remaining == 0 ? _ReloadDelay : _Delay);
+        if (_bullet1Remaining == 0) _bullet1Remaining = _MagCapacity;
         _CanShoot = true;
     }
 
