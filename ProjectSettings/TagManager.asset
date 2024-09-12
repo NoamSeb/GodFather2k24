@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ThoughtBubble
+  - BonusBubble
   layers:
   - Default
   - TransparentFX

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bubblePrefab: {fileID: 7612481719519812847, guid: 7ab066c71cb19c74dae8517670eac91e, type: 3}
+  _bonusBubblePrefab: {fileID: 7612481719519812847, guid: 5f96a89b57aaa21468449dec98a73217, type: 3}
   _randomManager: {fileID: 0}
   _spawnPos:
   - {x: -10, y: 2}

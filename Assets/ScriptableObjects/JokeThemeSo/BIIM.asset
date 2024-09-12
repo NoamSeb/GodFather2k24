@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62efff45f2712347b3950df462055f9, type: 3}
+  m_Name: BIIM
+  m_EditorClassIdentifier: 
+  _theme: Blague IIM
+  _bubbleSpeedMulti: 1
+  _sizeMultiplier: 1
+  _themeSprite: {fileID: 0}
+  _jokeList:
+  - 'Qu''est ce qui est plus lisse qu''une patinoire.
+
+
+    Le crane a franco'
+  - "Quel est le point commun entre thomas nicolet et snopp dogg ?\n\nLes deux adore
+    les plantes d'am\xE9rique du sud"
+  - 'Qu''est ce qui est moins utile qu''un GD en prog ?
+
+
+    Un GA.'
+  - "Qu'est ce qui est plus rare qu'une \xE9clipse\n\nLa Douche d'un GP"
+  - 'Qu''est ce qui bosse moins qu''un chomeur ?
+
+
+    un GD en fin de projet'

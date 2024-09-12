@@ -13,6 +13,9 @@ public class ThemeBubbleBehaviour : MonoBehaviour
     private Rigidbody2D _rb;
     private JokeThemeSO _jokeThemeSo;
     private float _speedMultiplier;
+    [SerializeField] private GameObject[] _resizedParticles;
+    [SerializeField] private TrailRenderer _cloudTrail;
+
 
     public JokeThemeSO GetThemeSo() => _jokeThemeSo;
 
@@ -27,6 +30,13 @@ public class ThemeBubbleBehaviour : MonoBehaviour
         _iconSprite.sprite = jokeThemeSo.ThemeSprite;
         _speedMultiplier = jokeThemeSo.BubbleSpeedMulti;
         _direction = direction;
+        transform.localScale *= jokeThemeSo.SizeMultiplier;
+        GetComponent<CapsuleCollider2D>().size *= jokeThemeSo.SizeMultiplier;
+        _cloudTrail.widthMultiplier *= transform.localScale.x;
+        foreach (GameObject resizedParticle in _resizedParticles) 
+        {
+            resizedParticle.transform.localScale = transform.localScale;
+        }
     }
 
     private void FixedUpdate()

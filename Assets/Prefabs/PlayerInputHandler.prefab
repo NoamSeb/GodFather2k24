@@ -102,6 +102,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e97e5e85-1e82-448a-b8e8-9ff772f933c5
     m_ActionName: Player/Shoot[/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4054678498350601240}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnOK
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f415efcf-d773-4a64-a550-b5443aa26af1
+    m_ActionName: Player/OK[/DualShock4GamepadHID/buttonSouth,/DualSenseGamepadHID/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
