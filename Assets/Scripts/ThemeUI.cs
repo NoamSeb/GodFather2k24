@@ -9,10 +9,10 @@ public class ThemeUI : MonoBehaviour
     [SerializeField] private RandomManager _randomManager;
     [SerializeField] private TextMeshProUGUI _themeText;
 
-    public void ShowTheme()
+    /*public void ShowTheme()
     {
-        JokeThemeSO theme = _randomManager.GetTheme();
+        JokeThemeSO theme = _randomManager.Get();
         Debug.Log(theme);
         _themeText.text = theme.Theme;
-    }
+    }*/
 }

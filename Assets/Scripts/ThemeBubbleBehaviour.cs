@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 public class ThemeBubbleBehaviour : MonoBehaviour
 {
     [SerializeField] private float _speedDefault;
+    [SerializeField] private SpriteRenderer _iconSprite;
     private Vector2 _direction;
     private Rigidbody2D _rb;
     private JokeThemeSO _jokeThemeSo;
@@ -23,6 +24,7 @@ public class ThemeBubbleBehaviour : MonoBehaviour
     public void SetupBubble(Vector2 direction, JokeThemeSO jokeThemeSo)
     {
         _jokeThemeSo = jokeThemeSo;
+        _iconSprite.sprite = jokeThemeSo.ThemeSprite;
         _speedMultiplier = jokeThemeSo.BubbleSpeedMulti;
         _direction = direction;
     }
@@ -31,5 +33,11 @@ public class ThemeBubbleBehaviour : MonoBehaviour
     {
         _rb.velocity = _direction * (_speedDefault * _speedMultiplier);
     }
-    
+
+    public void Capture()
+    {
+        Debug.Log("Thought bubble of theme " + _jokeThemeSo.Theme + " was captured !");
+        Destroy(gameObject);
+    }
+
 }

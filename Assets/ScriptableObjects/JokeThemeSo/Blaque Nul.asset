@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Blaque Nul
   m_EditorClassIdentifier: 
   _theme: Blague Nul
+  _bubbleSpeedMulti: 1
   _quality: 0
+  _themeSprite: {fileID: 4255802720890521689, guid: 7aabbd1ba4ea2bb468ed527fb55f35df, type: 3}
   _jokeList:
   - Une blague nul
   - Une autre blague nul j'ai pas d'inspi
