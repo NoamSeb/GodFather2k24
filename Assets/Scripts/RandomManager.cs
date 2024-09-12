@@ -21,6 +21,14 @@ public class RandomManager : MonoBehaviour
         _usedJokes = new List<string>();
     }
 
+    [SerializeField] private JokeThemeSO _test;
+
+    [Button]
+    private void TestJokeRandom()
+    {
+        Debug.Log(GetJokeFromTheme(_test));
+    }
+
     public string GetRandomIntonation()
     {
         string intonation = _intonationList[Random.Range(0, _intonationList.Count)];
@@ -85,7 +93,7 @@ public class RandomManager : MonoBehaviour
             }
         }
 
-        _usedJokes.Remove(joke);
+        _usedJokes.Add(joke);
         return joke;
     }
 }
