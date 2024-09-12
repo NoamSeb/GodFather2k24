@@ -31,5 +31,6 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context) {_scopeController.ReadMoveInput(context);}
     
     public void OnShoot(InputAction.CallbackContext context) {_scopeController.ReadShootInput(context);}
+    public void OnOK(InputAction.CallbackContext context) {_scopeController.ReadOKInput(context);}
 
 }

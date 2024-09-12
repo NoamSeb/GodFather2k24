@@ -33,6 +33,7 @@ public class ScopeController : MonoBehaviour
    
 
     private AudioSource audioSource;
+    private GameManager _gameManager;
 
     private void Start()
     {
@@ -40,6 +41,8 @@ public class ScopeController : MonoBehaviour
         Debug.Log(_bullet1Remaining);
         _capturedThemes = new List<JokeThemeSO>();
         audioSource = GetComponent<AudioSource>();
+        _gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        _gameManager.SetPlayer(this,_playerIndex);
     }
 
     #region Initialization
@@ -159,5 +162,10 @@ public class ScopeController : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, _gunRange);
+    }
+
+    public void ReadOKInput(InputAction.CallbackContext context)
+    {
+        _gameManager.PassToNextJoke(_playerIndex);
     }
 }
