@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField, Foldout("References")] private BubbleManager _bubbleManager;
     [SerializeField, Foldout("References")] private RandomManager _randomManager;
+    private TimeController _timeController;
     [SerializeField, Foldout("References")] private GameObject _phase2Canvas;
     [SerializeField, Foldout("References")] private ThemeUI _themeUI;
     [SerializeField, Foldout("References")] private AudioSource _mainMusicAudioSource;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         _phase2Canvas.SetActive(false);
         _preparePanel.SetActive(false);
         _finishedPanel.SetActive(false);
+        _timeController = GetComponent<TimeController>();
     }
 
     public void PlayerJoined()
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         _gamePhase = 1;
+        _timeController.StartTimer(_phase1Timer);
         _bubbleManager.StartBubbles(_phase1Timer, this);
     }
 

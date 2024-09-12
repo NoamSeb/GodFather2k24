@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8712495399946789571}
   - component: {fileID: 4229693397514066071}
+  - component: {fileID: 8894431983294187793}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bubbleManager: {fileID: 0}
   _randomManager: {fileID: 0}
+  _timeController: {fileID: 0}
   _phase2Canvas: {fileID: 0}
   _themeUI: {fileID: 0}
   _mainMusicAudioSource: {fileID: 0}
@@ -59,3 +61,16 @@ MonoBehaviour:
   _phase1Timer: 20
   _prepareTime: 10
   _defaultThemeJoke: {fileID: 11400000, guid: 251f5cf4d0b77f849b033fa9d189c841, type: 2}
+--- !u!114 &8894431983294187793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310291862508475294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61b7e439d31876478fb8402129c4a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameUI: {fileID: 0}
