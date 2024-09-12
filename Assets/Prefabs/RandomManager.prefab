@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _jokeThemeElements:
   - jokeThemeSo: {fileID: 11400000, guid: 251f5cf4d0b77f849b033fa9d189c841, type: 2}
-    minAppear: 10
-    maxAppear: 15
+    minAppear: 5
+    maxAppear: 7
   - jokeThemeSo: {fileID: 11400000, guid: 3b03f3bc4b03867458e128234249310a, type: 2}
     minAppear: 2
     maxAppear: 3
@@ -55,11 +55,11 @@ MonoBehaviour:
     minAppear: 2
     maxAppear: 3
   - jokeThemeSo: {fileID: 11400000, guid: 67ccf94a89fc56544a6daf7528787a27, type: 2}
-    minAppear: 2
-    maxAppear: 3
+    minAppear: 5
+    maxAppear: 7
   - jokeThemeSo: {fileID: 11400000, guid: bf1c0d4c81ff9fd43bfa190ad93c52f3, type: 2}
     minAppear: 2
     maxAppear: 3
   - jokeThemeSo: {fileID: 11400000, guid: e7ed872d3b56fec4da4df5cbbb774f1d, type: 2}
-    minAppear: 2
-    maxAppear: 3
+    minAppear: 1
+    maxAppear: 2
