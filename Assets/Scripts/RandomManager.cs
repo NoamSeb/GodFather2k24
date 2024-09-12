@@ -9,7 +9,11 @@ using Random = UnityEngine.Random;
 public class RandomManager : MonoBehaviour
 {
     [SerializeField] private List<JokeThemeElement> _jokeThemeElements;
+    [SerializeField] private List<BonusElement> _bonusElements;
+    [SerializeField] private List<string> _accessoryList;
+    [SerializeField] private List<string> _intonationList;
     private List<string> _usedJokes;
+    
     
 
     private void Awake()
@@ -35,6 +39,29 @@ public class RandomManager : MonoBehaviour
             int index = Random.Range(0, jokeThemeList.Count);
             temp.Add(jokeThemeList[index]);
             jokeThemeList.RemoveAt(index);
+            
+        }
+        return temp;
+    }
+    
+    public List<BonusType> GetBonusList()
+    {
+        List<BonusType> bonusTypes = new List<BonusType>();
+        foreach (BonusElement bonusElement in _bonusElements)
+        {
+            for (int i = 0; i < Random.Range(bonusElement.MinAppear,bonusElement.MaxAppear); i++)
+            {
+                bonusTypes.Add(bonusElement.BonusType);
+            }
+        }
+
+        List<BonusType> temp = new List<BonusType>(0);
+        int nb = bonusTypes.Count;
+        for (int i = 0; i < nb; i++)
+        {
+            int index = Random.Range(0, bonusTypes.Count);
+            temp.Add(bonusTypes[index]);
+            bonusTypes.RemoveAt(index);
             
         }
         return temp;
@@ -67,4 +94,22 @@ public struct JokeThemeElement
     public JokeThemeSO JokeThemeSo => jokeThemeSo;
     public int MaxAppear => maxAppear;
     public int MinAppear => minAppear;
+}
+
+[Serializable]
+struct BonusElement
+{
+    [SerializeField] private BonusType bonusType;
+    [SerializeField] private int minAppear;
+    [SerializeField] private int maxAppear;
+
+    public BonusType BonusType => bonusType;
+    public int MaxAppear => maxAppear;
+    public int MinAppear => minAppear;
+}
+
+public enum BonusType
+{
+    Accessory,
+    Intonation,
 }

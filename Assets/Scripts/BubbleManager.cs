@@ -7,6 +7,7 @@ using UnityEngine;
 public class BubbleManager : MonoBehaviour
 {
     [SerializeField] private GameObject _bubblePrefab;
+    [SerializeField] private GameObject _bonusBubblePrefab;
     [SerializeField] private RandomManager _randomManager;
     [SerializeField] private List<Vector2> _spawnPos;
     [SerializeField] private GameObject _thoughtScreen;
@@ -17,15 +18,28 @@ public class BubbleManager : MonoBehaviour
     [Button]
     private void Test()
     {
-        StartCoroutine(LaunchGame(30));
+        StartCoroutine(SpawnThemesCoroutine(30));
     }
 
     public void StartBubbles(float timer, GameManager gameManager)
     {
         _gameManager = gameManager;
-        StartCoroutine(LaunchGame(timer));
+        StartCoroutine(SpawnThemesCoroutine(timer));
+        StartCoroutine(SpawnBonusCoroutine(timer));
     }
-    private IEnumerator LaunchGame(float timer)
+
+    private IEnumerator SpawnBonusCoroutine(float timer)
+    {
+        List<BonusType> bonusTypes = _randomManager.GetBonusList();
+        float cooldown = (timer + 1) / bonusTypes.Count;
+        foreach (BonusType bonusType in bonusTypes)
+        {
+            CreateBubble(bonusType);
+            yield return new WaitForSeconds(cooldown - Random.Range(-cooldown/3,cooldown/3));
+        }
+    }
+
+    private IEnumerator SpawnThemesCoroutine(float timer)
     {
         List<JokeThemeSO> jokeThemeSos = _randomManager.GetThemeList();
         float cooldown = (timer + 1) / jokeThemeSos.Count;
@@ -42,6 +56,13 @@ public class BubbleManager : MonoBehaviour
         ThemeBubbleBehaviour bubble = Instantiate(_bubblePrefab, _spawnPos[Random.Range(0,_spawnPos.Count)], Quaternion.identity).GetComponent<ThemeBubbleBehaviour>();
         Vector2 dir = _thoughtScreen.transform.position - (bubble.transform.position + new Vector3(Random.Range(-_dirDiffPos.x, _dirDiffPos.x),Random.Range(-_dirDiffPos.y, _dirDiffPos.y)));
         bubble.SetupBubble(dir, jokeThemeSo);
+    }
+    
+    private void CreateBubble(BonusType bonusType)
+    {
+        BonusBubbleBehaviour bubble = Instantiate(_bonusBubblePrefab, _spawnPos[Random.Range(0,_spawnPos.Count)], Quaternion.identity).GetComponent<BonusBubbleBehaviour>();
+        Vector2 dir = _thoughtScreen.transform.position - (bubble.transform.position + new Vector3(Random.Range(-_dirDiffPos.x, _dirDiffPos.x),Random.Range(-_dirDiffPos.y, _dirDiffPos.y)));
+        bubble.SetupBubble(dir, bonusType);
     }
 
     private void OnDrawGizmosSelected()

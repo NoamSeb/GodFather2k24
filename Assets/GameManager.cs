@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void PassToNextJoke(int playerIndex)
     {
+        if (_gamePhase != 2) return;
         //If Player that wants to pass to next Joke has current joke
         if (_currPlayerIndexJoke == playerIndex)
         {
