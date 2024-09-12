@@ -77,8 +77,8 @@ MonoBehaviour:
   _speedDefault: 0.5
   _sizeMultiplier: 0.5
   _spriteList:
-  - {fileID: 1472637206532175213, guid: 9f2b191c1f7090445af3c6502ff0a365, type: 3}
-  - {fileID: -9110542371827499029, guid: 7aabbd1ba4ea2bb468ed527fb55f35df, type: 3}
+  - {fileID: 21300000, guid: b345c2c8de6936a4b8aa850c936735c8, type: 3}
+  - {fileID: 21300000, guid: 5a0561c619f4d80438b3fa8d092c9924, type: 3}
   _iconSprite: {fileID: 3482352641308905629}
   _resizedParticles:
   - {fileID: 1064188931981834638}
