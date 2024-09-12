@@ -15,7 +15,7 @@ MonoBehaviour:
   _theme: Humour Noir
   _bubbleSpeedMulti: 1
   _sizeMultiplier: 1
-  _themeSprite: {fileID: -5104592536962530534, guid: 9f2b191c1f7090445af3c6502ff0a365, type: 3}
+  _themeSprite: {fileID: 21300000, guid: 3e940b1eb2441974e91ed7ba07c6197e, type: 3}
   _jokeList:
   - "Quelle est l'animal qui ne sait pas nager ?\nLe tigre \xE9gory (ptit gr\xE9gory)"
   - 'C''est l''histoire d''un mec qui a 5 bites.
