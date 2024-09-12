@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using ScriptableObjects;
@@ -12,8 +13,12 @@ public class GameManager : MonoBehaviour
     [SerializeField, Foldout("References")] private ThemeUI _themeUI;
     [SerializeField, Foldout("References")] private AudioSource _mainMusicAudioSource;
     [SerializeField, Foldout("References")] private AudioClip _duelMusic;
+    [SerializeField, Foldout("References")] private GameObject _preparePanel;
+    [SerializeField, Foldout("References")] private GameObject _finishedPanel;
     [SerializeField] private string[] _emptySentences;
     [SerializeField] private float _phase1Timer = 30f;
+    [SerializeField] private float _prepareTime = 10f;
+    [SerializeField] private JokeThemeSO _defaultThemeJoke;
     
     private int _gamePhase;
     private ScopeController[] _players;
@@ -35,6 +40,8 @@ public class GameManager : MonoBehaviour
         _currPlayerIndexJoke = -1;
         _nbPlayer = 0;
         _phase2Canvas.SetActive(false);
+        _preparePanel.SetActive(false);
+        _finishedPanel.SetActive(false);
     }
 
     public void PlayerJoined()
@@ -54,13 +61,24 @@ public class GameManager : MonoBehaviour
 
     public void StartPhase2()
     {
-        _gamePhase = 2;
+        StartCoroutine(Phase2Setup());
+    }
+    
+    private IEnumerator Phase2Setup()
+    {
+        _preparePanel.SetActive(true);
+        
         _mainMusicAudioSource.clip = _duelMusic;
         _mainMusicAudioSource.Play();
-        _phase2Canvas.SetActive(true);
+        
         _capturedJokes[0] = _players[0].GetCapturedJokes();
         _capturedJokes[1] = _players[1].GetCapturedJokes();
         _currPlayerIndexJoke = _players[0].GetPlayerScore() < _players[1].GetPlayerScore() ? 1 : _players[0].GetPlayerScore() == _players[1].GetPlayerScore() ? _currPlayerIndexJoke : 0;
+        
+        //Adding DefaultJoke if player doesn't have any jokes;
+        if (_capturedJokes[0].Count == 0) _capturedJokes[0].Add(_defaultThemeJoke);
+        if (_capturedJokes[1].Count == 0) _capturedJokes[1].Add(_defaultThemeJoke);
+        
         _bonusTypesP1 = new List<BonusType>[_capturedJokes[0].Count];
         _bonusTypesP2 = new List<BonusType>[_capturedJokes[1].Count];
         
@@ -74,34 +92,37 @@ public class GameManager : MonoBehaviour
             _bonusTypesP2[i] = new List<BonusType>();
         }
         //Player 1 Bonus
-        int bCount = 0;
+        int[] bCount = { 0, 0 };
         foreach (BonusType capturedBonus in _players[0].GetCapturedBonus())
         {
+            if (bCount[capturedBonus == BonusType.Accessory ? 0 : 1] >= _bonusTypesP1.Length) continue;
             int r = Random.Range(0, _bonusTypesP1.Length);
             while (_bonusTypesP1[r].Contains(capturedBonus))
             {
                 r = Random.Range(0, _bonusTypesP1.Length);
             }
             _bonusTypesP1[r].Add(capturedBonus);
-            bCount++;
-            if (bCount >= _bonusTypesP1.Length) break;
+            bCount[capturedBonus==BonusType.Accessory? 0 : 1]++;
         }
         //Player 2 Bonus
+        bCount = new[] { 0, 0 };
         foreach (BonusType capturedBonus in _players[1].GetCapturedBonus())
         {
+            if (bCount[capturedBonus == BonusType.Accessory ? 0 : 1] >= _bonusTypesP1.Length) continue;
             int r = Random.Range(0, _bonusTypesP2.Length);
             while (_bonusTypesP2[r].Contains(capturedBonus))
             {
                 r = Random.Range(0, _bonusTypesP2.Length);
             }
             _bonusTypesP2[r].Add(capturedBonus);
-            if (bCount >= _bonusTypesP2.Length) break;
+            bCount[capturedBonus==BonusType.Accessory? 0 : 1]++;
         }
-        if (_capturedJokes[0].Count == 0 & _capturedJokes[1].Count == 0) //No Jokes were took
-        {
-            GameEnd();
-            return;
-        }
+
+        yield return new WaitForSeconds(_prepareTime);
+        _gamePhase = 2;
+        _preparePanel.SetActive(false);
+        _phase2Canvas.SetActive(true);
+        
         JokeThemeSO jokeThemeSo = _capturedJokes[0][_themeIndex[0]];
         _randomManager.GetJokeFromTheme(jokeThemeSo);
         (string accessory, string intonation) = GetBonus();
@@ -173,6 +194,8 @@ public class GameManager : MonoBehaviour
     private void GameEnd()
     {
         Debug.Log("GameOver");
+        _phase2Canvas.SetActive(false);
+        _finishedPanel.SetActive(true);
         //EndPhase;
     }
 

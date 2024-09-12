@@ -50,7 +50,11 @@ MonoBehaviour:
   _themeUI: {fileID: 0}
   _mainMusicAudioSource: {fileID: 0}
   _duelMusic: {fileID: 8300000, guid: a075eaf4efc43cd48887da9779235df0, type: 3}
+  _preparePanel: {fileID: 0}
+  _finishedPanel: {fileID: 0}
   _emptySentences:
   - Pas d'Accessoire !
   - Pas d'Intonation !
   _phase1Timer: 20
+  _prepareTime: 10
+  _defaultThemeJoke: {fileID: 11400000, guid: 251f5cf4d0b77f849b033fa9d189c841, type: 2}
