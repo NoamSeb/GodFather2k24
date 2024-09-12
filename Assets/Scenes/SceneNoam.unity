@@ -433,13 +433,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f566ffc3e4bd4bb42a51d3fb3d8326eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _thoughtScreen: {fileID: 0}
+  _ignoredLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _speed: 5
   _Delay: 1
   _ReloadDelay: 2
   _reloadSound: {fileID: 8300000, guid: 65cce753e5c041649960198d903b718e, type: 3}
   _shootSound: {fileID: 8300000, guid: a7113b678f383344796e800ebdce4ee7, type: 3}
   _MagCapacity: 6
+  _gunRange: 0.5
+  _canCaptureMultiple: 1
   _EffectVolume: 2
+  _playerIndex: 0
 --- !u!212 &512071177
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -737,6 +744,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798456148}
   m_CullTransparentMesh: 1
+--- !u!1 &1127311555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1127311556}
+  m_Layer: 0
+  m_Name: Phase2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1127311556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127311555}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.1711273, y: 2.1711273, z: 2.1711273}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1132532213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132532209
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +870,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1127311556}
   - {fileID: 798456149}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,18 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using ScriptableObjects;
-using TMPro;
 using UnityEngine;
 
 public class ThemeUI : MonoBehaviour
 {
-    [SerializeField] private RandomManager _randomManager;
-    [SerializeField] private TextMeshProUGUI _themeText;
+    [SerializeField] private JokeThemeSO jokeThemeSO;
+    [SerializeField] private string joke;
 
-    /*public void ShowTheme()
+    [SerializeField] private ShowJoke showJokeScriptP1;
+    [SerializeField] private ShowJoke showJokeScriptP2;
+    [SerializeField] private int playerId;
+
+    private void Start()
     {
-        JokeThemeSO theme = _randomManager.Get();
-        Debug.Log(theme);
-        _themeText.text = theme.Theme;
-    }*/
+        showJokeScriptP1.gameObject.SetActive(false);
+        showJokeScriptP2.gameObject.SetActive(false);
+    }
+
+    [Button]
+    private void test()
+    {
+        ShowJoke(jokeThemeSO, joke, playerId);
+    }
+
+    public void ShowJoke(JokeThemeSO jokeTheme, string joke, int playerIndex)
+    {
+
+        if(playerIndex == 0)
+        {
+            showJokeScriptP1.gameObject.SetActive(true);
+            showJokeScriptP2.gameObject.SetActive(false);
+
+            showJokeScriptP1.DisplayPlayerJoke(jokeTheme, joke);
+
+        }
+        else if(playerIndex == 1) { 
+            showJokeScriptP1.gameObject.SetActive(false);
+            showJokeScriptP2.gameObject.SetActive(true);
+
+            showJokeScriptP2.DisplayPlayerJoke(jokeTheme, joke);
+        }
+    }
 }
