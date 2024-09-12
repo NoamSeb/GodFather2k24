@@ -14,6 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _theme: blague de daron
   _bubbleSpeedMulti: 1
-  _quality: 15
+  _quality: 2
   _themeSprite: {fileID: 0}
-  _jokeList: []
+  _jokeList:
+  - "Pourquoi l'homme demande t-il la main d'une femme ?\n\_\nParce qu'il en a marre
+    d'utiliser la sienne !"
+  - 'Papa Papa 3 et 3 ca fait combien ?
+
+
+    Match Nul.'
+  - "Pourquoi les plongeurs plongent-ils toujours en arri\xE8re et jamais en avant
+    ?\n\nParce que sinon ils tombent dans le bateau !\_"
+  - "Tu connais le point commun entre un oignon et mon portefeulle\n\nD\xE8s que
+    j'en ouvre un je pleure"
+  - "Comment reconnait-on une moto anglaise ?\nLe guidon est \xE0 droite."
+  - "Quel est l\u2019acteur pr\xE9f\xE9r\xE9 des informaticiens ?\n\_\nChristian
+    Clavier\u2026"
+  - "Pourquoi les canards sont-ils toujours \xE0 l\u2019heure ?\n\nParce qu\u2019ils
+    sont toujours sur le quack !"
+  - "Quel est le comble pour un \xE9lectricien ?\n\nDe ne pas \xEAtre au courant."
+  - 'Je me pose une question existentielle.
+
+    Est-ce que le changement climatique
+    aura une influence sur les pizzas 4 saisons ?'
+  - "Mon patron m'a dit de passer une bonne journ\xE9e.\nJe suis donc rentr\xE9 chez
+    moi."
+  - "Que fait le gorille en sonnant \xE0 la porte ?\n\_\nKing Kong."
+  - "Que dirait un papier Q \xE0 Luc dans la guerre des \xE9toiles ?\n\_\nJ'essuie
+    ton p\xE8re. quack !"
+  - "Que dit Frodon devant sa maison ?\n\_\nC'est l\xE0 que j'hobbit..."
+  - "Pourquoi Sylvester Stallone se maquille ?\n\_\nParce qu\u2019il se Rambo ! (Il
+    se rend beau)"
+  - "Quelle diff\xE9rence y-a-t\u2019il entre un bulldog et une belle-m\xE8re ?\n\_\nLe
+    rouge \xE0 l\xE8vres."

@@ -14,6 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _theme: Blague IIM
   _bubbleSpeedMulti: 1
-  _quality: 0
+  _quality: 1
   _themeSprite: {fileID: 0}
-  _jokeList: []
+  _jokeList:
+  - 'Qu''est ce qui est plus lisse qu''une patinoire.
+
+
+    Le crane a franco'
+  - "Quel est le point commun entre thomas nicolet et snopp dogg ?\n\nLes deux adore
+    les plantes d'am\xE9rique du sud"
+  - 'Qu''est ce qui est moins utile qu''un GD en prog ?
+
+
+    Un GA.'
+  - "Qu'est ce qui est plus rare qu'une \xE9clipse\n\nLa Douche d'un GP"
+  - 'Qu''est ce qui bosse moins qu''un chomeur ?
+
+
+    un GD en fin de projet'

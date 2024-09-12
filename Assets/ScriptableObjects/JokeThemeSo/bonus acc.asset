@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62efff45f2712347b3950df462055f9, type: 3}
   m_Name: bonus acc
   m_EditorClassIdentifier: 
-  _theme: 
+  _theme: Bonus accessoires
   _bubbleSpeedMulti: 1
   _quality: 0
   _themeSprite: {fileID: 0}
-  _jokeList: []
+  _jokeList:
+  - Lunette bite
+  - Barbe
+  - Cheveux blanc
+  - Cheveux Brun

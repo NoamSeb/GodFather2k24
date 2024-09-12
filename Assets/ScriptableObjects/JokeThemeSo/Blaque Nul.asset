@@ -12,10 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62efff45f2712347b3950df462055f9, type: 3}
   m_Name: Blaque Nul
   m_EditorClassIdentifier: 
-  _theme: Blague Nul
+  _theme: Blague de merde
   _bubbleSpeedMulti: 1
-  _quality: 0
+  _quality: 1
   _themeSprite: {fileID: 4255802720890521689, guid: 7aabbd1ba4ea2bb468ed527fb55f35df, type: 3}
   _jokeList:
-  - Une blague nul
-  - Une autre blague nul j'ai pas d'inspi
+  - "Tu sais pourquoi l'iPhone 6 se plie ?\_\nParce que l'Apple Store."
+  - "Qu'est ce qu'un b\xFBcheron sans hache ?\n\nUn b\xFBceron !"
+  - "Que font deux canards qui se s\xE9parent ?\n\nIls partent chacun dans leur coin
+    !"
+  - 'Qu''est ce qui applatit les cars ?
+
+
+    Les placards'
+  - "Que dit-on \xE0 un poisson mal poli ?\n\nTu changes de ton\_"
+  - "T'as pris quoi comme r\xE9solution pour cette nouvelle ann\xE9e ?\_\n1080p."
+  - "A quoi sert Internet Explorer ?\_\nA t\xE9l\xE9charger Google Chrome.\_"
+  - "Monsieur ou madame Honette on une fille comment s\u2019appelle t-elle ?\n\nCamille"
+  - "Pourquoi \xE9cole et alcool riment ?\n\nParce que les deux saoulent !"
+  - 'Que fait un geek quand il s''ennuie ?
+
+
+    il se fichier !'
+  - 'Qu''est ce qui est blanc, noir et vert ?
+
+
+    Deux pandas qui se battent pour
+    un cornichons !'
+  - "Pourquoi les Geek sont-ils fiers ?\_\nParce qu'ils ont une Gygabyte"
+  - "Que dit une m\xE8re \xE0 son fils geek quand le diner est servi ?\_\nAlt Tab
+    !!!"
+  - "Quel Pokemon a une mitraillette ?\n\_\nRatatatatatatatatata"
+  - "Pourquoi Mario n\u2019utilise pas de tuyau pour tuer des tortues ?\_\nParce
+    que ca Koopa"
+  - "Que fait-on quand un gamer pleure ?\_\nOn le console"
+  - "A quoi reconna\xEEt-on le slip de Dark Vador ?\n\_\nA son c\xF4t\xE9 obscur."
+  - "C'est quand le retour du Jedi ?\n\_\nC'est entre le Mercredaille et le Vendredaille.."
+  - "Pourquoi Harry Potter chuchote-t-il ?\n\_\nParce que Dumbledore."
+  - "Quelle est la diff\xE9rence entre un rappeur et un campeur ?\n\_\nLe rappeur
+    nique ta m\xE8re et le campeur monte ta tente."

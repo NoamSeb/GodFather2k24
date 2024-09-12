@@ -16,4 +16,12 @@ MonoBehaviour:
   _bubbleSpeedMulti: 1
   _quality: 0
   _themeSprite: {fileID: 0}
-  _jokeList: []
+  _jokeList:
+  - "accent du sud\_"
+  - accent quebecois
+  - voix de mickey
+  - voix de stich
+  - "Dark Vador\_"
+  - Accent du nord
+  - "P\xE8re Fouras"
+  - Voix enfant
