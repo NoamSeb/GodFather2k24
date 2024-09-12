@@ -13,14 +13,14 @@ public class ShowJoke : MonoBehaviour
     [SerializeField] private TextMeshProUGUI accessory2;
 
 
-    public void DisplayPlayerJoke(JokeThemeSO jokeTheme, string joke)
+    public void DisplayPlayerJoke(JokeThemeSO jokeTheme, string joke, string accessory, string intonation)
     {
         //TODO: get JokeThemeSO from _capturedThemes
 
         JokeThemeText.text = jokeTheme.Theme;
         Joke.text = joke;
-        accessory1.text = "Barbe Blanche";
-        accessory2.text = "Accent du nord";
+        accessory1.text = accessory;
+        accessory2.text = intonation;
 
     }
 }

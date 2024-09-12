@@ -78,7 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94808a63cbb6ae04e8fa1fef4d91f82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jokeThemeSO: {fileID: 0}
   JokeThemeText: {fileID: 7026327744393434556}
   Joke: {fileID: 8384220555579044006}
   accessory1: {fileID: 7282530856030555690}
@@ -810,7 +809,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 274.228, y: 50}
+  m_SizeDelta: {x: 274.228, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5678883819388773133
 CanvasRenderer:
@@ -903,7 +902,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -1.4846725, w: 0}
+  m_margin: {x: 0, y: 0, z: -1.4846725, w: -43.524902}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
