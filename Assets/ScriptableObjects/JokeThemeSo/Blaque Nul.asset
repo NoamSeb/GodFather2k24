@@ -15,16 +15,16 @@ MonoBehaviour:
   _theme: Blague de merde
   _bubbleSpeedMulti: 1
   _sizeMultiplier: 1.5
-  _themeSprite: {fileID: 21300000, guid: 8caf5ee1a2ef77f46bbfe21db81e4f12, type: 3}
+  _themeSprite: {fileID: 21300000, guid: b7f73c0bf5fd6594fb1d3c3ea6d9344e, type: 3}
   _jokeList:
   - "Tu sais pourquoi l'iPhone 6 se plie ?\_\nParce que l'Apple Store."
-  - "Qu'est ce qu'un b\xFBcheron sans hache ?\n\nUn b\xFBceron !"
+  - "Qu'est-ce qu'un b\xFBcheron sans hache ?\n\nUn b\xFBceron !"
   - "Que font deux canards qui se s\xE9parent ?\n\nIls partent chacun dans leur coin
     !"
-  - 'Qu''est ce qui applatit les cars ?
+  - 'Qu''est-ce qui aplatit les cars ?
 
 
-    Les placards'
+    Les placards.'
   - "Que dit-on \xE0 un poisson mal poli ?\n\nTu changes de ton\_"
   - "T'as pris quoi comme r\xE9solution pour cette nouvelle ann\xE9e ?\_\n1080p."
   - "A quoi sert Internet Explorer ?\_\nA t\xE9l\xE9charger Google Chrome.\_"
@@ -44,7 +44,7 @@ MonoBehaviour:
     !!!"
   - "Quel Pokemon a une mitraillette ?\n\_\nRatatatatatatatatata"
   - "Pourquoi Mario n\u2019utilise pas de tuyau pour tuer des tortues ?\_\nParce
-    que ca Koopa"
+    que \xE7a Koopa !"
   - "Que fait-on quand un gamer pleure ?\_\nOn le console"
   - "A quoi reconna\xEEt-on le slip de Dark Vador ?\n\_\nA son c\xF4t\xE9 obscur."
   - "C'est quand le retour du Jedi ?\n\_\nC'est entre le Mercredaille et le Vendredaille.."
