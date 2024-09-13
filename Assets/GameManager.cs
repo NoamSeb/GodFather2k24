@@ -70,13 +70,14 @@ public class GameManager : MonoBehaviour
     
     private IEnumerator Phase2Setup()
     {
+        _gamePhase = 0;
         _preparePanel.SetActive(true);
         
         _mainMusicAudioSource.clip = _duelMusic;
         _mainMusicAudioSource.Play();
         
-        _capturedJokes[0] = _players[0].GetCapturedJokes();
-        _capturedJokes[1] = _players[1].GetCapturedJokes();
+        _capturedJokes[0] = new List<JokeThemeSO>(_players[0].GetCapturedJokes());
+        _capturedJokes[1] = new List<JokeThemeSO>(_players[1].GetCapturedJokes());
         if (_currPlayerIndexJoke == -1) _currPlayerIndexJoke = Random.Range(0, 1);
         _currPlayerIndexJoke = _players[0].GetPlayerScore() < _players[1].GetPlayerScore() ? 1 : _players[0].GetPlayerScore() == _players[1].GetPlayerScore() ? _currPlayerIndexJoke : 0;
         
@@ -113,7 +114,7 @@ public class GameManager : MonoBehaviour
         bCount = new[] { 0, 0 };
         foreach (BonusType capturedBonus in _players[1].GetCapturedBonus())
         {
-            if (bCount[capturedBonus == BonusType.Accessory ? 0 : 1] >= _bonusTypesP1.Length) continue;
+            if (bCount[capturedBonus == BonusType.Accessory ? 0 : 1] >= _bonusTypesP2.Length) continue;
             int r = Random.Range(0, _bonusTypesP2.Length);
             while (_bonusTypesP2[r].Contains(capturedBonus))
             {
@@ -128,7 +129,7 @@ public class GameManager : MonoBehaviour
         _preparePanel.SetActive(false);
         _phase2Canvas.SetActive(true);
         
-        JokeThemeSO jokeThemeSo = _capturedJokes[0][_themeIndex[0]];
+        JokeThemeSO jokeThemeSo = _capturedJokes[_currPlayerIndexJoke][_themeIndex[_currPlayerIndexJoke]];
         _randomManager.GetJokeFromTheme(jokeThemeSo);
         (string accessory, string intonation) = GetBonus();
         _themeUI.ShowJoke(jokeThemeSo, _randomManager.GetJokeFromTheme(jokeThemeSo), _currPlayerIndexJoke, accessory, intonation);
@@ -200,6 +201,7 @@ public class GameManager : MonoBehaviour
     private void GameEnd()
     {
         Debug.Log("GameOver");
+        _gamePhase = 3;
         _phase2Canvas.SetActive(false);
         _finishedPanel.SetActive(true);
         //EndPhase;
