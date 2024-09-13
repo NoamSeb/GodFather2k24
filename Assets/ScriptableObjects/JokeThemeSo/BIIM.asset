@@ -17,18 +17,12 @@ MonoBehaviour:
   _sizeMultiplier: 1
   _themeSprite: {fileID: 21300000, guid: accafad7c2d956940b25a0f171b6732c, type: 3}
   _jokeList:
-  - 'Qu''est ce qui est plus lisse qu''une patinoire.
-
-
-    Le crane a franco'
-  - "Quel est le point commun entre thomas nicolet et snopp dogg ?\n\nLes deux adore
-    les plantes d'am\xE9rique du sud"
-  - 'Qu''est ce qui est moins utile qu''un GD en prog ?
+  - "Qu'est-ce qui est plus lisse qu'une patinoire ?\n\nLe cr\xE2ne a franco."
+  - "Quel est le point commun entre Thomas Nicolet et Snoop Dogg ?\n\nLes deux adorent
+    les plantes d'Am\xE9rique du Sud."
+  - 'Qu''est-ce qui est moins utile qu''un GD en prog ?
 
 
     Un GA.'
-  - "Qu'est ce qui est plus rare qu'une \xE9clipse\n\nLa Douche d'un GP"
-  - 'Qu''est ce qui bosse moins qu''un chomeur ?
-
-
-    un GD en fin de projet'
+  - "Qu'est-ce qui est plus rare qu'une \xE9clipse ?\n\nLa Douche d'un GP."
+  - "Qu'est-ce qui bosse moins qu'un ch\xF4meur ?\n\nUn GD en fin de projet.x"
