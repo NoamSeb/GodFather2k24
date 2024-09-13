@@ -17,7 +17,6 @@ public class GameUI : MonoBehaviour
     public void UpdateTimer(float completionRate)
     {
         Quaternion rotation = _timerClockHand.localRotation;
-        Debug.Log(rotation);
         _timerClockHand.localRotation = Quaternion.Euler(rotation.x, rotation.y, completionRate * -360);
         _fillTimer.fillAmount = completionRate;
     }

@@ -17,6 +17,8 @@ public class ThemeBubbleBehaviour : MonoBehaviour
     [SerializeField] private TrailRenderer _cloudTrail;
     [SerializeField] private GameObject _explosion;
     [SerializeField] private GameObject[] _toDisableWhenExplode;
+    private bool _hasBeenCaptured;
+    public bool HasBeenCaptured => _hasBeenCaptured;
 
 
     public JokeThemeSO GetThemeSo() => _jokeThemeSo;
@@ -24,6 +26,7 @@ public class ThemeBubbleBehaviour : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _hasBeenCaptured = false;
     }
 
     public void SetupBubble(Vector2 direction, JokeThemeSO jokeThemeSo)
@@ -54,6 +57,7 @@ public class ThemeBubbleBehaviour : MonoBehaviour
             toDisable.SetActive(false);
         }
         _explosion.SetActive(true);
+        _hasBeenCaptured = true;
         Destroy(gameObject,1);
     }
 

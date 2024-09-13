@@ -2188,6 +2188,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4229693397514066071, guid: 28914e422df003843ac39c0eea016136, type: 3}
+      propertyPath: _prepareTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229693397514066071, guid: 28914e422df003843ac39c0eea016136, type: 3}
       propertyPath: _phase2Canvas
       value: 
       objectReference: {fileID: 1038651959}

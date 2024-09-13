@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
         
         _capturedJokes[0] = _players[0].GetCapturedJokes();
         _capturedJokes[1] = _players[1].GetCapturedJokes();
+        if (_currPlayerIndexJoke == -1) _currPlayerIndexJoke = Random.Range(0, 1);
         _currPlayerIndexJoke = _players[0].GetPlayerScore() < _players[1].GetPlayerScore() ? 1 : _players[0].GetPlayerScore() == _players[1].GetPlayerScore() ? _currPlayerIndexJoke : 0;
         
         //Adding DefaultJoke if player doesn't have any jokes;
