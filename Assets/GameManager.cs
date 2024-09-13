@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
             foreach (BonusType bonus in bonusTypes)
             {
                 if (bonus == BonusType.Accessory)
-                {
+                { 
                     accessory = "Tu as un Accessoire !";
                 }
                 else
@@ -216,6 +216,6 @@ public class GameManager : MonoBehaviour
 
     public void TryReload(InputAction.CallbackContext context)
     {
-        if (context.performed && _gamePhase == 3) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (context.performed ) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

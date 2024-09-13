@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c33bd180d0e57c4bb33fa5f7c0db700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedDefault: 0.5
+  _speedDefault: 0.9
   _iconSprite: {fileID: 2375562399503573152}
   _resizedParticles:
   - {fileID: 2188958456627513779}

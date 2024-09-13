@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce60a8fbf2d68a64294df967719dd1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedDefault: 0.5
+  _speedDefault: 0.7
   _sizeMultiplier: 0.5
   _spriteList:
   - {fileID: 21300000, guid: b345c2c8de6936a4b8aa850c936735c8, type: 3}
