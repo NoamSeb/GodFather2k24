@@ -150,6 +150,7 @@ public class ScopeController : MonoBehaviour
             if (col.gameObject.CompareTag("ThoughtBubble"))
             {
                 ThemeBubbleBehaviour themeBubble = col.GetComponent<ThemeBubbleBehaviour>();
+                if (themeBubble.HasBeenCaptured) break;
                 _capturedThemes.Add(themeBubble.GetThemeSo());
                 CollectedIcon iconPrefab = Instantiate(_iconPrefab, themeBubble.gameObject.transform.position, Quaternion.identity).GetComponent<CollectedIcon>();
                 iconPrefab.Setup(this,themeBubble.GetSprite());
@@ -159,6 +160,7 @@ public class ScopeController : MonoBehaviour
             else if (col.gameObject.CompareTag("BonusBubble"))
             {
                 BonusBubbleBehaviour bonusBubble = col.GetComponent<BonusBubbleBehaviour>();
+                if (bonusBubble.HasBeenCaptured) break;
                 _capturedBonus.Add(bonusBubble.GetBonusType());
                 CollectedIcon iconPrefab = Instantiate(_iconPrefab, bonusBubble.gameObject.transform.position, Quaternion.identity).GetComponent<CollectedIcon>();
                 iconPrefab.Setup(this,bonusBubble.GetSprite());

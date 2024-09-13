@@ -31,7 +31,7 @@ public class BubbleManager : MonoBehaviour
     private IEnumerator SpawnBonusCoroutine(float timer)
     {
         List<BonusType> bonusTypes = _randomManager.GetBonusList();
-        float cooldown = (timer + 1) / bonusTypes.Count;
+        float cooldown = (timer-1) / bonusTypes.Count;
         foreach (BonusType bonusType in bonusTypes)
         {
             CreateBubble(bonusType);
@@ -42,12 +42,13 @@ public class BubbleManager : MonoBehaviour
     private IEnumerator SpawnThemesCoroutine(float timer)
     {
         List<JokeThemeSO> jokeThemeSos = _randomManager.GetThemeList();
-        float cooldown = timer / jokeThemeSos.Count; 
+        float cooldown = (timer-1) / jokeThemeSos.Count;
         foreach (JokeThemeSO jokeThemeSo in jokeThemeSos)
         {
             yield return new WaitForSeconds(cooldown);
             CreateBubble(jokeThemeSo);
         }
+        yield return new WaitForSeconds(1);
         _gameManager.StartPhase2();
     }
     

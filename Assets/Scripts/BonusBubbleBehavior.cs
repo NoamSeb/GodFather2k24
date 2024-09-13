@@ -19,6 +19,8 @@ public class BonusBubbleBehaviour : MonoBehaviour
     private Rigidbody2D _rb;
     private BonusType _bonusType;
     private float _speedMultiplier;
+    private bool _hasBeenCaptured;
+    public bool HasBeenCaptured => _hasBeenCaptured;
 
     public BonusType GetBonusType() => _bonusType;
 
@@ -32,6 +34,8 @@ public class BonusBubbleBehaviour : MonoBehaviour
         {
             resizedParticle.transform.localScale = transform.localScale;
         }
+
+        _hasBeenCaptured = false;
     }
 
     public void SetupBubble(Vector2 direction, BonusType bonusType)
@@ -55,6 +59,7 @@ public class BonusBubbleBehaviour : MonoBehaviour
             toDisable.SetActive(false);
         }
 
+        _hasBeenCaptured = true;
         _explosion.SetActive(true);
         Destroy(gameObject,1);
     }
