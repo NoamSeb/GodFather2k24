@@ -57,4 +57,5 @@ public class ThemeBubbleBehaviour : MonoBehaviour
         Destroy(gameObject,1);
     }
 
+    public Sprite GetSprite() => _iconSprite.sprite;
 }

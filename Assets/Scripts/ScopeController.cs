@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ScriptableObjects;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class ScopeController : MonoBehaviour
 {
     [SerializeField, Foldout("Reference")] private Transform _thoughtScreen;
     [SerializeField, Foldout("Reference")] private GameUI _gameUI;
     [SerializeField, Foldout("Reference")] private LayerMask _ignoredLayer;
+    [SerializeField, Foldout("Reference")] private GameObject _iconPrefab;
     [SerializeField] private float _speed = 3.0f; 
     [SerializeField] private float _Delay = 1;
     [SerializeField] private float _ReloadDelay = 2;
@@ -148,6 +151,8 @@ public class ScopeController : MonoBehaviour
             {
                 ThemeBubbleBehaviour themeBubble = col.GetComponent<ThemeBubbleBehaviour>();
                 _capturedThemes.Add(themeBubble.GetThemeSo());
+                CollectedIcon iconPrefab = Instantiate(_iconPrefab, themeBubble.gameObject.transform.position, Quaternion.identity).GetComponent<CollectedIcon>();
+                iconPrefab.Setup(this,themeBubble.GetSprite());
                 themeBubble.Capture();
                 if (!_canCaptureMultiple) break;
             }
@@ -155,13 +160,14 @@ public class ScopeController : MonoBehaviour
             {
                 BonusBubbleBehaviour bonusBubble = col.GetComponent<BonusBubbleBehaviour>();
                 _capturedBonus.Add(bonusBubble.GetBonusType());
+                CollectedIcon iconPrefab = Instantiate(_iconPrefab, bonusBubble.gameObject.transform.position, Quaternion.identity).GetComponent<CollectedIcon>();
+                iconPrefab.Setup(this,bonusBubble.GetSprite());
                 bonusBubble.Capture();
                 if (!_canCaptureMultiple) break;
             }
         }
 
         if (GetPlayerScore() == 1) _gameManager.FirstCloudCaptured(_playerIndex);
-        _gameUI.UpdateScoreUI(_playerIndex, GetPlayerScore());
         
         StartCoroutine(WaitForShoot());
         Debug.Log("Bullet remaining : " + _bullet1Remaining);
@@ -198,5 +204,11 @@ public class ScopeController : MonoBehaviour
         {
             _gameManager.PassToNextJoke(_playerIndex);
         }
+    }
+
+    public void UpdateScore()
+    {
+        _gameUI.UpdateScoreUI(_playerIndex, GetPlayerScore());
+
     }
 }
