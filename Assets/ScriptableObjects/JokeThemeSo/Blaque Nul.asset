@@ -15,7 +15,7 @@ MonoBehaviour:
   _theme: Blague de merde
   _bubbleSpeedMulti: 1
   _sizeMultiplier: 1.5
-  _themeSprite: {fileID: 21300000, guid: 8caf5ee1a2ef77f46bbfe21db81e4f12, type: 3}
+  _themeSprite: {fileID: 21300000, guid: b7f73c0bf5fd6594fb1d3c3ea6d9344e, type: 3}
   _jokeList:
   - "Tu sais pourquoi l'iPhone 6 se plie ?\_\nParce que l'Apple Store."
   - "Qu'est-ce qu'un b\xFBcheron sans hache ?\n\nUn b\xFBceron !"
