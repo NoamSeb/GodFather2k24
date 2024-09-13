@@ -8,6 +8,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerInput _playerInput;
     private ScopeController _scopeController;
+    private GameManager _gameManager;
 
     private void Awake()
     {
@@ -26,11 +27,13 @@ public class PlayerInputHandler : MonoBehaviour
         {
             throw new NullReferenceException("No Scope Controller where found for player index : " + _playerInput.playerIndex);
         }
+        _gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
 
     public void OnMove(InputAction.CallbackContext context) {_scopeController.ReadMoveInput(context);}
     
     public void OnShoot(InputAction.CallbackContext context) {_scopeController.ReadShootInput(context);}
     public void OnOK(InputAction.CallbackContext context) {_scopeController.ReadOKInput(context);}
+    public void OnReload(InputAction.CallbackContext context) {_gameManager.TryReload(context);}
 
 }

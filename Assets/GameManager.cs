@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -210,5 +212,10 @@ public class GameManager : MonoBehaviour
     public void FirstCloudCaptured(int playerIndex)
     {
         if (_currPlayerIndexJoke == -1) _currPlayerIndexJoke = playerIndex;
+    }
+
+    public void TryReload(InputAction.CallbackContext context)
+    {
+        if (context.performed && _gamePhase == 3) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
