@@ -99,9 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _thoughtScreen: {fileID: 0}
+  _gameUI: {fileID: 0}
   _ignoredLayer:
     serializedVersion: 2
     m_Bits: 8
+  _iconPrefab: {fileID: 1733150529324464059, guid: ec533a35ad67030479be6e686ed1f891, type: 3}
   _speed: 6
   _Delay: 0.75
   _ReloadDelay: 3
