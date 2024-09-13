@@ -42,11 +42,11 @@ public class BubbleManager : MonoBehaviour
     private IEnumerator SpawnThemesCoroutine(float timer)
     {
         List<JokeThemeSO> jokeThemeSos = _randomManager.GetThemeList();
-        float cooldown = (timer + 1) / jokeThemeSos.Count;
+        float cooldown = timer / jokeThemeSos.Count; 
         foreach (JokeThemeSO jokeThemeSo in jokeThemeSos)
         {
-            CreateBubble(jokeThemeSo);
             yield return new WaitForSeconds(cooldown);
+            CreateBubble(jokeThemeSo);
         }
         _gameManager.StartPhase2();
     }
